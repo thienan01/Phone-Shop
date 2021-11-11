@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">SNd0jsRoqy</property>
+        <property name="hibernate.connection.url">jdbc:mysql://remotemysql.com:3306/8ZFZoXpXk4</property>
+        <property name="hibernate.connection.username">8ZFZoXpXk4</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <mapping class="com.entity.User"></mapping>
+        <mapping class="com.entity.Product"></mapping>
+        <mapping class="com.entity.Category"></mapping>
+    </session-factory>
+</hibernate-configuration>
