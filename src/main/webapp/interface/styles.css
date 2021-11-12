@@ -2412,7 +2412,9 @@ Cart Area
 #phonename{
 	max-height: 30px;
   	overflow: hidden;
-	
+}
+#clickToViewDetail{
+	color: black;
 }
 
 /*

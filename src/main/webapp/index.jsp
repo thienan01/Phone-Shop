@@ -6,9 +6,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Load database</title>
 </head>
 <body>
-	<c:redirect url="/home"/>
+	<c:redirect url="/LoadProduct"/>
 </body>
 </html>

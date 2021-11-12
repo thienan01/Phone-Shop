@@ -10,9 +10,19 @@
 		<description></description>
 		<servlet-class>com.Control.HomeControl</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>LoadProduct</servlet-name>
+		<display-name>LoadProduct</display-name>
+		<description></description>
+		<servlet-class>com.Control.LoadProduct</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>HomeControl</servlet-name>
 		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoadProduct</servlet-name>
+		<url-pattern>/LoadProduct</url-pattern>
 	</servlet-mapping>
 	
 	

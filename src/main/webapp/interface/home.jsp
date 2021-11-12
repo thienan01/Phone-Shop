@@ -1,5 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1" --%>
-    pageEncoding="ISO-8859-1"%>
+
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
@@ -310,27 +309,29 @@
                       <img src="${item.getImage()}" alt="product">
                     </div>
                     <div class="product__footer">
-                      <h3 id="phonename">${item.getName()}</h3>
-                      <div class="rating">
-                        <svg>
-                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
-                        </svg>
-                        <svg>
-                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
-                        </svg>
-                        <svg>
-                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
-                        </svg>
-                        <svg>
-                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
-                        </svg>
-                        <svg>
-                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
-                        </svg>
-                      </div>
-                      <div class="product__price">
+                    	<a href="home?action=viewDetail&amp;id=${item.getId()}" id="clickToViewDetail">
+                      	<h3 id="phonename">${item.getName()}</h3>
+                     	 <div class="rating">
+                        	<svg>
+                        	  <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
+                       	 </svg>
+                       	 <svg>
+                       	   <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
+                       	 </svg>
+                       	 <svg>
+                       	   <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
+                       	 </svg>
+                       	 <svg>
+                        	  <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
+                        	</svg>
+                       	 <svg>
+                        	  <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
+                       	 </svg>
+                     	 </div>
+                      	<div class="product__price">
                         <h4>${item.getPrice()} VND</h4>
                       </div>
+                      </a>
                       <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
                     </div>
                     <ul>

@@ -12,11 +12,11 @@ public class ProductDAO {
 	
 	static final org.hibernate.SessionFactory factory = HibernateUtil.getSessionFactory();
 	
-	public Product getProduct() {
+	public Product getProductID(int id) {
 		try {
 			Session session = factory.openSession();
 			Transaction transaction = session.beginTransaction();	
-			Product product = session.get(Product.class, 1);
+			Product product = session.get(Product.class, id);
 			transaction.commit();
 			return product;
 		} catch (Exception e) {

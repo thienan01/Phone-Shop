@@ -1,14 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./interface/images/favicon.ico" type="image/x-icon" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet" />
@@ -21,7 +24,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- Custom StyleSheet -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./interface/styles.css" />
 
   <title>Phone Shop</title>
 </head>
@@ -33,7 +36,7 @@
         <nav class="nav">
           <div class="nav__hamburger">
             <svg>
-              <use xlink:href="./images/sprite.svg#icon-menu"></use>
+              <use xlink:href="./interface/images/sprite.svg#icon-menu"></use>
             </svg>
           </div>
 
@@ -48,7 +51,7 @@
               <span class="nav__category">PHONE</span>
               <a href="#" class="close__toggle">
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-cross"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-cross"></use>
                 </svg>
               </a>
             </div>
@@ -71,19 +74,19 @@
           <div class="nav__icons">
             <a href="#" class="icon__item">
               <svg class="icon__user">
-                <use xlink:href="./images/sprite.svg#icon-user"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-user"></use>
               </svg>
             </a>
 
             <a href="#" class="icon__item">
               <svg class="icon__search">
-                <use xlink:href="./images/sprite.svg#icon-search"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-search"></use>
               </svg>
             </a>
 
             <a href="#" class="icon__item">
               <svg class="icon__cart">
-                <use xlink:href="./images/sprite.svg#icon-shopping-basket"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-shopping-basket"></use>
               </svg>
               <span id="cart__total">0</span>
             </a>
@@ -99,7 +102,7 @@
             <li>
               <a href="/">
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-home"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-home"></use>
                 </svg>
               </a>
             </li>
@@ -119,25 +122,25 @@
             <div class="details__container--left">
               <div class="product__pictures">
                 <div class="pictures__container">
-                  <img class="picture" src="./images/products/iPhone/iphone1.jpeg" id="pic1" />
+                  <img class="picture" src="${product.getImage()}" id="pic1" />
                 </div>
                 <div class="pictures__container">
-                  <img class="picture" src="./images/products/iPhone/iphone2.jpeg" id="pic2" />
+                  <img class="picture" src="${product.getImage()}" id="pic2" />
                 </div>
                 <div class="pictures__container">
-                  <img class="picture" src="./images/products/iPhone/iphone3.jpeg" id="pic3" />
+                  <img class="picture" src="${product.getImage()}" id="pic3" />
                 </div>
                 <div class="pictures__container">
-                  <img class="picture" src="./images/products/iPhone/iphone4.jpeg" id="pic4" />
+                  <img class="picture" src="${product.getImage()}" id="pic4" />
                 </div>
                 <div class="pictures__container">
-                  <img class="picture" src="./images/products/iPhone/iphone5.jpeg" id="pic5" />
+                  <img class="picture" src="${product.getImage()}" id="pic5" />
                 </div>
               </div>
               <div class="product__picture" id="product__picture">
                 <!-- <div class="rect" id="rect"></div> -->
                 <div class="picture__container">
-                  <img src="./images/products/iPhone/iphone1.jpeg" id="pic" />
+                  <img src="${product.getImage()}	" id="pic" />
                 </div>
               </div>
               <div class="zoom" id="zoom"></div>
@@ -147,14 +150,14 @@
               <a class="add" href="#">
                 <span>
                   <svg>
-                    <use xlink:href="./images/sprite.svg#icon-cart-plus"></use>
+                    <use xlink:href="./interface/images/sprite.svg#icon-cart-plus"></use>
                   </svg>
                 </span>
                 ADD TO CART</a>
               <a class="buy" href="#">
                 <span>
                   <svg>
-                    <use xlink:href="./images/sprite.svg#icon-credit-card"></use>
+                    <use xlink:href="./interface/images/sprite.svg#icon-credit-card"></use>
                   </svg>
                 </span>
                 BUY NOW
@@ -164,35 +167,32 @@
 
           <div class="product-detail__right">
             <div class="product-detail__content">
-              <h3>Apple iPhone XR</h3>
+              <h3>${product.getName()}</h3>
               <div class="price">
-                <span class="new__price">$250.99</span>
+                <span class="new__price">${product.getPrice()} VND</span>
               </div>
               <div class="product__review">
                 <div class="rating">
                   <svg>
-                    <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                    <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                   </svg>
                   <svg>
-                    <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                    <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                   </svg>
                   <svg>
-                    <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                    <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                   </svg>
                   <svg>
-                    <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                    <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                   </svg>
                   <svg>
-                    <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                    <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                   </svg>
                 </div>
-                <a href="#" class="rating__quatity">3 reviews</a>
+                <a href="#" class="rating__quatity">10 reviews</a>
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                a doloribus iste natus et facere?
-                dolor sit amet consectetur adipisicing elit. Sunt
-                a doloribus iste natus et facere?
+                ${product.getDetail()}
               </p>
               <div class="product__info-container">
                 <ul class="product__info">
@@ -200,8 +200,8 @@
                     <div class="select__option">
                       <label for="colors">Color</label>
                       <select name="colors" id="colors" class="select-box">
-                        <option value="blue">blue</option>
-                        <option value="red">red</option>
+                        <option value="blue">Xanh</option>
+                        <option value="red">Đỏ</option>
                       </select>
                     </div>
                     <div class="select__option">
@@ -219,13 +219,13 @@
                       <div>
                         <span class="minus-btn">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-minus"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-minus"></use>
                           </svg>
                         </span>
                         <input type="text" min="1" value="1" max="10" class="counter-btn">
                         <span class="plus-btn">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-plus"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-plus"></use>
                           </svg>
                         </span>
                       </div>
@@ -234,11 +234,11 @@
 
                   <li>
                     <span>Subtotal:</span>
-                    <a href="#" class="new__price">$250.99</a>
+                    <a href="#" class="new__price">${product.getPrice()}</a>
                   </li>
                   <li>
                     <span>Brand:</span>
-                    <a href="#">Apple</a>
+                    <a href="#">${product.getBrand()}</a>
                   </li>
                   <li>
                     <span>Product Type:</span>
@@ -246,14 +246,14 @@
                   </li>
                   <li>
                     <span>Availability:</span>
-                    <a href="#" class="in-stock">In Stock (7 Items)</a>
+                    <a href="#" class="in-stock">${product.getStatus()}</a>
                   </li>
                 </ul>
                 <div class="product-info__btn">
                   <a href="#">
                     <span>
                       <svg>
-                        <use xlink:href="./images/sprite.svg#icon-crop"></use>
+                        <use xlink:href="./interface/images/sprite.svg#icon-crop"></use>
                       </svg>
                     </span>&nbsp;
                     SIZE GUIDE
@@ -261,7 +261,7 @@
                   <a href="#">
                     <span>
                       <svg>
-                        <use xlink:href="./images/sprite.svg#icon-truck"></use>
+                        <use xlink:href="./interface/images/sprite.svg#icon-truck"></use>
                       </svg>
                     </span>&nbsp;
                     SHIPPING
@@ -269,7 +269,7 @@
                   <a href="#">
                     <span>
                       <svg>
-                        <use xlink:href="./images/sprite.svg#icon-envelope-o"></use>
+                        <use xlink:href="./interface/images/sprite.svg#icon-envelope-o"></use>
                       </svg>&nbsp;
                     </span>
                     ASK ABOUT THIS PRODUCT
@@ -307,50 +307,26 @@
 
           <div class="detail__content">
             <div class="content active" id="description">
-              <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam
-                dolor, elementum etos lobortis des mollis ut risus. Sedcus faucibus an sullamcorper mattis drostique des
-                commodo pharetras loremos.Donec pretium egestas sapien et mollis.
-              </p>
-              <h2>Sample Unordered List</h2>
-              <ul>
-                <li>Comodous in tempor ullamcorper miaculis</li>
-                <li>Pellentesque vitae neque mollis urna mattis laoreet.</li>
-                <li>Divamus sit amet purus justo.</li>
-                <li>Proin molestie egestas orci ac suscipit risus posuere loremous</li>
-              </ul>
-              <h2>Sample Ordered Lista</h2>
-              <ol>
-                <li>Comodous in tempor ullamcorper miaculis</li>
-                <li>Pellentesque vitae neque mollis urna mattis laoreet.</li>
-                <li>Divamus sit amet purus justo.</li>
-                <li>Proin molestie egestas orci ac suscipit risus posuere loremous</li>
-              </ol>
-              <h2>Sample Paragraph Text</h2>
-              <p>Praesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras
-                felis
-                nunc commodo eu convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec
-                danos dui. Cras suscipit quam et turpis eleifend vitae malesuada magna congue. Damus id ullamcorper
-                neque. Sed vitae mi a mi pretium aliquet ac sed elit. Pellentesque nulla eros accumsan quis justo at
-                tincidunt lobortis denimes loremous. Suspendisse vestibulum lectus in lectus volutpat, ut dapibus purus
-                pulvinar. Vestibulum sit amet auctor ipsum.</p>
+              <h2>${product.getName()}</h2>
+              <p>${product.getDescription()}</p>
             </div>
             <div class="content" id="reviews">
               <h1>Customer Reviews</h1>
               <div class="rating">
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                 </svg>
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                 </svg>
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                 </svg>
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                 </svg>
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                 </svg>
               </div>
             </div>
@@ -406,19 +382,19 @@
                       <h3>Samsung Galaxy</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -430,21 +406,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -461,19 +437,19 @@
                       <h3>Apple iPhone 11</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -485,21 +461,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -515,19 +491,19 @@
                       <h3>Samsung Galaxy</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -539,21 +515,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -563,25 +539,25 @@
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="./images/products/iPhone/iphone2.jpeg" alt="product"></a>
+                      <a href="#"><img src="./interface/images/products/iPhone/iphone2.jpeg" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Apple iPhone 11</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -593,21 +569,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -623,19 +599,19 @@
                       <h3>Sony WH-CH510</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -647,21 +623,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -678,19 +654,19 @@
                       <h3>Samsung Galaxy</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -702,21 +678,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -732,19 +708,19 @@
                       <h3>Sony WH-CH510</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -756,21 +732,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -786,19 +762,19 @@
                       <h3>Sony WH-CH510</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -810,21 +786,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -840,19 +816,19 @@
                       <h3>Apple iPhone XR</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -864,21 +840,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -891,12 +867,12 @@
             <div class="glide__arrows" data-glide-el="controls">
               <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-arrow-left2"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-arrow-left2"></use>
                 </svg>
               </button>
               <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-arrow-right2"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-arrow-right2"></use>
                 </svg>
               </button>
             </div>
@@ -924,19 +900,19 @@
                       <h3>Apple iPhone 11</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -948,21 +924,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -978,19 +954,19 @@
                       <h3>Samsung Galaxy</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -1002,21 +978,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -1032,19 +1008,19 @@
                       <h3>Sony WH-CH510</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -1056,21 +1032,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -1086,19 +1062,19 @@
                       <h3>Samsung Galaxy</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -1110,21 +1086,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -1134,25 +1110,25 @@
                 <li class="glide__slide">
                   <div class="product">
                     <div class="product__header">
-                      <a href="#"><img src="./images/products/iPhone/iphone2.jpeg" alt="product"></a>
+                      <a href="#"><img src="./interface/images/products/iPhone/iphone2.jpeg" alt="product"></a>
                     </div>
                     <div class="product__footer">
                       <h3>Apple iPhone 11</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -1164,21 +1140,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -1194,19 +1170,19 @@
                       <h3>Sony WH-CH510</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -1218,21 +1194,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -1248,19 +1224,19 @@
                       <h3>Samsung Galaxy</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -1272,21 +1248,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -1302,19 +1278,19 @@
                       <h3>Sony WH-CH510</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -1326,21 +1302,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -1356,19 +1332,19 @@
                       <h3>Apple iPhone XR</h3>
                       <div class="rating">
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-full"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-full"></use>
                         </svg>
                         <svg>
-                          <use xlink:href="./images/sprite.svg#icon-star-empty"></use>
+                          <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                         </svg>
                       </div>
                       <div class="product__price">
@@ -1380,21 +1356,21 @@
                       <li>
                         <a data-tip="Quick View" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-eye"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-eye"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Wishlist" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-heart-o"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-heart-o"></use>
                           </svg>
                         </a>
                       </li>
                       <li>
                         <a data-tip="Add To Compare" data-place="left" href="#">
                           <svg>
-                            <use xlink:href="./images/sprite.svg#icon-loop2"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-loop2"></use>
                           </svg>
                         </a>
                       </li>
@@ -1407,12 +1383,12 @@
             <div class="glide__arrows" data-glide-el="controls">
               <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-arrow-left2"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-arrow-left2"></use>
                 </svg>
               </button>
               <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
                 <svg>
-                  <use xlink:href="./images/sprite.svg#icon-arrow-right2"></use>
+                  <use xlink:href="./interface/images/sprite.svg#icon-arrow-right2"></use>
                 </svg>
               </button>
             </div>
@@ -1427,7 +1403,7 @@
           <div class="facility__box">
             <div class="facility-img__container">
               <svg>
-                <use xlink:href="./images/sprite.svg#icon-airplane"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-airplane"></use>
               </svg>
             </div>
             <p>FREE SHIPPING WORLD WIDE</p>
@@ -1436,7 +1412,7 @@
           <div class="facility__box">
             <div class="facility-img__container">
               <svg>
-                <use xlink:href="./images/sprite.svg#icon-credit-card-alt"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-credit-card-alt"></use>
               </svg>
             </div>
             <p>100% MONEY BACK GUARANTEE</p>
@@ -1445,7 +1421,7 @@
           <div class="facility__box">
             <div class="facility-img__container">
               <svg>
-                <use xlink:href="./images/sprite.svg#icon-credit-card"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-credit-card"></use>
               </svg>
             </div>
             <p>MANY PAYMENT GATWAYS</p>
@@ -1454,7 +1430,7 @@
           <div class="facility__box">
             <div class="facility-img__container">
               <svg>
-                <use xlink:href="./images/sprite.svg#icon-headphones"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-headphones"></use>
               </svg>
             </div>
             <p>24/7 ONLINE SUPPORT</p>
@@ -1497,7 +1473,7 @@
           <div>
             <span>
               <svg>
-                <use xlink:href="./images/sprite.svg#icon-location"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-location"></use>
               </svg>
             </span>
             42 Dream House, Dreammy street, 7131 Dreamville, USA
@@ -1505,7 +1481,7 @@
           <div>
             <span>
               <svg>
-                <use xlink:href="./images/sprite.svg#icon-envelop"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-envelop"></use>
               </svg>
             </span>
             company@gmail.com
@@ -1513,7 +1489,7 @@
           <div>
             <span>
               <svg>
-                <use xlink:href="./images/sprite.svg#icon-phone"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-phone"></use>
               </svg>
             </span>
             456-456-4512
@@ -1521,7 +1497,7 @@
           <div>
             <span>
               <svg>
-                <use xlink:href="./images/sprite.svg#icon-paperplane"></use>
+                <use xlink:href="./interface/images/sprite.svg#icon-paperplane"></use>
               </svg>
             </span>
             Dream City, USA
@@ -1546,7 +1522,7 @@
 
   <a href="#header" class="goto-top scroll-link">
     <svg>
-      <use xlink:href="./images/sprite.svg#icon-arrow-up"></use>
+      <use xlink:href="./interface/images/sprite.svg#icon-arrow-up"></use>
     </svg>
   </a>
 
@@ -1557,9 +1533,9 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- Custom JavaScript -->
-  <script src="./js/products.js"></script>
-  <script src="./js/index.js"></script>
-  <script src="./js/slider.js"></script>
+  <script src="./interface/js/products.js"></script>
+  <script src="./interface/js/index.js"></script>
+  <script src="./interface/js/slider.js"></script>
 </body>
 
 </html>
