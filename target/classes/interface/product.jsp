@@ -41,7 +41,7 @@
           </div>
 
           <div class="nav__logo">
-            <a href="/" class="scroll-link">
+            <a href="./index.jsp" class="scroll-link">
               PHONE
             </a>
           </div>
@@ -57,7 +57,7 @@
             </div>
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="/" class="nav__link">Home</a>
+                <a href="./index.jsp" class="nav__link">Home</a>
               </li>
               <li class="nav__item">
                 <a href="#" class="nav__link">Products</a>
@@ -106,7 +106,7 @@
                 </svg>
               </a>
             </li>
-            <li class="page__title">iPhone 11</li>
+            <li class="page__title">${product.getBrand()}</li>
           </ul>
         </div>
       </div>
@@ -200,8 +200,8 @@
                     <div class="select__option">
                       <label for="colors">Color</label>
                       <select name="colors" id="colors" class="select-box">
-                        <option value="blue">Xanh</option>
-                        <option value="red">Đỏ</option>
+                        <option value="blue">${product.getColor()}</option>
+                        <option value="blue">Hồng</option>
                       </select>
                     </div>
                     <div class="select__option">

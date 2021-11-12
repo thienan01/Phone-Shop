@@ -1,7 +1,9 @@
 package com.Control;
 
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,11 +21,10 @@ public class HomeControl extends HttpServlet {
 		String action = request.getParameter("action");
 		
 		if (action.equals("viewDetail")) {
-			
-			  int id = Integer.parseInt(request.getParameter("id")); 
-			  ProductDAO productDAO = new ProductDAO(); Product product = productDAO.getProductID(id);
-			  request.setAttribute("product", product);
-			  request.getRequestDispatcher("/interface/product.jsp").forward(request, response);
+			int id = Integer.parseInt(request.getParameter("id")); 
+			ProductDAO productDAO = new ProductDAO(); Product product = productDAO.getProductID(id);
+			request.setAttribute("product", product);
+			request.getRequestDispatcher("/interface/product.jsp").forward(request, response);
 		}
 
 	}
