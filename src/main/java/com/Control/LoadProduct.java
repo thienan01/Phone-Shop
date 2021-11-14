@@ -1,6 +1,7 @@
 package com.Control;
 
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -18,6 +19,10 @@ public class LoadProduct extends HttpServlet {
 		
 		ProductDAO productDAO = new ProductDAO();
 		List<Product> productsList = productDAO.getAllProducts();
+		NumberFormat currency = NumberFormat.getCurrencyInstance();
+		for (Product product : productsList) {
+			product.getPrice().toString();
+		}
 		request.setAttribute("pList", productsList);
 		request.getRequestDispatcher("/interface/home.jsp").forward(request, response);
 		

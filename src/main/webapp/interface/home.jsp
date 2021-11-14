@@ -41,7 +41,7 @@
           </div>
 
           <div class="nav__logo">
-            <a href="/" class="scroll-link">
+            <a href="LoadProduct" class="scroll-link">
               PHONE
             </a>
           </div>
@@ -84,11 +84,11 @@
               </svg>
             </a>
 
-            <a href="#" class="icon__item">
+            <a href="cart?action=goToCart" class="icon__item">
               <svg class="icon__cart">
                 <use xlink:href="./interface/images/sprite.svg#icon-shopping-basket"></use>
               </svg>
-              <span id="cart__total">0</span>
+              <span id="cart__total">${cart.getCount()}</span>
             </a>
           </div>
         </nav>
@@ -329,10 +329,10 @@
                        	 </svg>
                      	 </div>
                       	<div class="product__price">
-                        <h4>${item.getPrice()} VND</h4>
+                        <h4>${item.getPriceFormat()} VND</h4>
                       </div>
                       </a>
-                      <a href="#"><button type="submit" class="product__btn">Add To Cart</button></a>
+                      <a href="cart?action=cart&amp;id=${item.getId()}"><button type="submit" class="product__btn">Add To Cart</button></a>
                     </div>
                     <ul>
                       <li>

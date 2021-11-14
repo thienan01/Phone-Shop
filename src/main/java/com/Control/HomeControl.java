@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.DAO.ProductDAO;
-import com.entity.Insert;
 import com.entity.Product;
 
 public class HomeControl extends HttpServlet {
@@ -22,7 +21,8 @@ public class HomeControl extends HttpServlet {
 		
 		if (action.equals("viewDetail")) {
 			int id = Integer.parseInt(request.getParameter("id")); 
-			ProductDAO productDAO = new ProductDAO(); Product product = productDAO.getProductID(id);
+			ProductDAO productDAO = new ProductDAO(); 
+			Product product = productDAO.getProductID(id);
 			request.setAttribute("product", product);
 			request.getRequestDispatcher("/interface/product.jsp").forward(request, response);
 		}

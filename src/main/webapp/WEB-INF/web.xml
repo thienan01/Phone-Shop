@@ -16,6 +16,12 @@
 		<description></description>
 		<servlet-class>com.Control.LoadProduct</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>CartControl</servlet-name>
+		<display-name>CartControl</display-name>
+		<description></description>
+		<servlet-class>com.Control.CartControl</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>HomeControl</servlet-name>
 		<url-pattern>/home</url-pattern>
@@ -24,9 +30,15 @@
 		<servlet-name>LoadProduct</servlet-name>
 		<url-pattern>/LoadProduct</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CartControl</servlet-name>
+		<url-pattern>/cart</url-pattern>
+	</servlet-mapping>
 	
 	
-	
+	<session-config>
+    <session-timeout>1200</session-timeout>
+  </session-config>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>

@@ -1,6 +1,7 @@
 package com.entity;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
 
 import javax.persistence.*;
 
@@ -11,14 +12,16 @@ public class Product implements Serializable  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "idCategory")
-	private int idCategory;
+	
+	@ManyToOne
+	@JoinColumn(name = "idCategory")
+	private Category category;
 	@Column(name = "brand")
 	private String brand;
 	@Column(name = "name")
 	private String name;
 	@Column(name = "price")
-	private String price;
+	private Double price;
 	@Column(name = "color")
 	private String color;
 	@Column(name = "detail")
@@ -32,11 +35,10 @@ public class Product implements Serializable  {
 	
 	public Product() {}
 	
-	public Product(int id, int idCategory, String brand, String name, String price, String color,
+	public Product(int id, String brand, String name, Double price, String color,
 			String detail, String description, String status, String image) {
 		super();
 		this.id = id;
-		this.idCategory = idCategory;
 		this.brand = brand;
 		this.name = name;
 		this.price = price;
@@ -55,14 +57,14 @@ public class Product implements Serializable  {
 		this.id = id;
 	}
 
-	public int getIdCategory() {
-		return idCategory;
+	public Category getCategory() {
+		return category;
 	}
 
-	public void setIdCategory(int idCategory) {
-		this.idCategory = idCategory;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
-
+	
 	public String getBrand() {
 		return brand;
 	}
@@ -79,11 +81,11 @@ public class Product implements Serializable  {
 		this.name = name;
 	}
 
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
@@ -127,6 +129,10 @@ public class Product implements Serializable  {
 		this.image = image;
 	}
 	
-	
+	public String getPriceFormat() {
+		NumberFormat currency = NumberFormat.getCurrencyInstance();
+		currency.setMaximumFractionDigits(0);
+        return currency.format(this.getPrice());
+	}
 	
 }

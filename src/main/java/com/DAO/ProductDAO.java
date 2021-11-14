@@ -6,6 +6,8 @@ import org.hibernate.Transaction;
 import com.Util.HibernateUtil;
 import com.entity.*;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class ProductDAO {
@@ -39,11 +41,17 @@ public class ProductDAO {
 	}
 	
 	public static void main(String[] args) {
-		Insert insert = new Insert();
 		
-		  List<Product> plLis = insert.getAllProducts(); 
-		  for (Product product : plLis)
-		  { System.out.print(product.getName()+"\n"); }
+		
+		  ProductDAO productDAO = new ProductDAO();
+		  
+		  String aString = "4";
+		  Product product =productDAO.getProductID(Integer.parseInt(aString));
+		  System.out.print(product.getName());
+		 
+
+		
+		 
 		 
 	}
 }

@@ -10,7 +10,6 @@
         <property name="hibernate.connection.username">8ZFZoXpXk4</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         
-        <mapping class="com.entity.User"></mapping>
         <mapping class="com.entity.Product"></mapping>
         <mapping class="com.entity.Category"></mapping>
     </session-factory>

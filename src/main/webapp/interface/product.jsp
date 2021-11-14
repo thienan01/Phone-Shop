@@ -41,7 +41,7 @@
           </div>
 
           <div class="nav__logo">
-            <a href="./index.jsp" class="scroll-link">
+            <a href="LoadProduct" class="scroll-link">
               PHONE
             </a>
           </div>
@@ -84,11 +84,11 @@
               </svg>
             </a>
 
-            <a href="#" class="icon__item">
+            <a href="cart?action=goToCart" class="icon__item">
               <svg class="icon__cart">
                 <use xlink:href="./interface/images/sprite.svg#icon-shopping-basket"></use>
               </svg>
-              <span id="cart__total">0</span>
+              <span id="cart__total">${cart.getCount()}</span>
             </a>
           </div>
         </nav>
@@ -147,7 +147,7 @@
             </div>
 
             <div class="product-details__btn">
-              <a class="add" href="#">
+              <a class="add" href="cart?action=cart&amp;id=${product.getId()}">
                 <span>
                   <svg>
                     <use xlink:href="./interface/images/sprite.svg#icon-cart-plus"></use>
@@ -169,7 +169,7 @@
             <div class="product-detail__content">
               <h3>${product.getName()}</h3>
               <div class="price">
-                <span class="new__price">${product.getPrice()} VND</span>
+                <span class="new__price">${product.getPriceFormat()} VND</span>
               </div>
               <div class="product__review">
                 <div class="rating">

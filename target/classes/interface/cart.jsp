@@ -1,16 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet" />
 
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./interface/images/favicon.ico" type="image/x-icon" />
 
     <!-- Carousel -->
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
@@ -21,7 +23,7 @@
 
 
     <!-- Custom StyleSheet -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./interface/styles.css" />
 
     <title>Phone Shop</title>
 </head>
@@ -33,12 +35,12 @@
                 <nav class="nav">
                     <div class="nav__hamburger">
                         <svg>
-                            <use xlink:href="./images/sprite.svg#icon-menu"></use>
+                            <use xlink:href="./interface/images/sprite.svg#icon-menu"></use>
                         </svg>
                     </div>
 
                     <div class="nav__logo">
-                        <a href="/" class="scroll-link">
+                        <a href="LoadProduct" class="scroll-link">
                             PHONE
                         </a>
                     </div>
@@ -48,13 +50,13 @@
                             <span class="nav__category">PHONE</span>
                             <a href="#" class="close__toggle">
                                 <svg>
-                                    <use xlink:href="./images/sprite.svg#icon-cross"></use>
+                                    <use xlink:href="./interface/images/sprite.svg#icon-cross"></use>
                                 </svg>
                             </a>
                         </div>
                         <ul class="nav__list">
                             <li class="nav__item">
-                                <a href="/" class="nav__link">Home</a>
+                                <a href="LoadProduct" class="nav__link">Home</a>
                             </li>
                             <li class="nav__item">
                                 <a href="#" class="nav__link">Products</a>
@@ -71,21 +73,21 @@
                     <div class="nav__icons">
                         <a href="#" class="icon__item">
                             <svg class="icon__user">
-                                <use xlink:href="./images/sprite.svg#icon-user"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-user"></use>
                             </svg>
                         </a>
 
                         <a href="#" class="icon__item">
                             <svg class="icon__search">
-                                <use xlink:href="./images/sprite.svg#icon-search"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-search"></use>
                             </svg>
                         </a>
 
                         <a href="#" class="icon__item">
                             <svg class="icon__cart">
-                                <use xlink:href="./images/sprite.svg#icon-shopping-basket"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-shopping-basket"></use>
                             </svg>
-                            <span id="cart__total">0</span>
+                            <span id="cart__total">${cart.getCount()}</span>
                         </a>
                     </div>
                 </nav>
@@ -99,7 +101,7 @@
                         <li>
                             <a href="/">
                                 <svg>
-                                    <use xlink:href="./images/sprite.svg#icon-home"></use>
+                                    <use xlink:href="./interface/images/sprite.svg#icon-home"></use>
                                 </svg>
                             </a>
                         </li>
@@ -127,189 +129,66 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <c:forEach var="item" items="${cart.items}">
+										<tr>
                                         <td class="product__thumbnail">
                                             <a href="#">
-                                                <img src="./images/products/iPhone/iphone6.jpeg" alt="">
+                                                <img src="${item.product.getImage()}" alt="">
                                             </a>
                                         </td>
                                         <td class="product__name">
-                                            <a href="#">Apple iPhone 11</a>
+                                            <a href="#">${item.product.getName()}</a>
                                             <br><br>
-                                            <small>White/6.25</small>
+                                            <small>${item.product.getColor()}</small>
                                         </td>
                                         <td class="product__price">
                                             <div class="price">
-                                                <span class="new__price">$250.99</span>
+                                                <span class="new__price">${item.product.getPriceFormat()}</span>
                                             </div>
                                         </td>
                                         <td class="product__quantity">
                                             <div class="input-counter">
                                                 <div>
+                                                <form action="cart" method="get">
                                                     <span class="minus-btn">
                                                         <svg>
-                                                            <use xlink:href="./images/sprite.svg#icon-minus"></use>
+                                                            <use xlink:href="./interface/images/sprite.svg#icon-minus"></use>
                                                         </svg>
                                                     </span>
-                                                    <input type="text" min="1" value="1" max="10" class="counter-btn">
+                                                    <input type="text" min="1" value="${item.getQuantity()}" max="10" class="counter-btn" name="quantity" >
+                                                    
                                                     <span class="plus-btn">
                                                         <svg>
-                                                            <use xlink:href="./images/sprite.svg#icon-plus"></use>
+                                                            <use xlink:href="./interface/images/sprite.svg#icon-plus"></use>
                                                         </svg>
                                                     </span>
+                                                    <input type="hidden" name="id" value="${item.product.getId()}">
+                                                    <input type="hidden" name="action" value="cart">
+                                                    <input type="submit" value="Update" id="updatebtn">
+                                                </form>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="product__subtotal">
                                             <div class="price">
-                                                <span class="new__price">$250.99</span>
+                                                <span class="new__price">${item.getTotalFormat()}</span>
                                             </div>
-                                            <a href="#" class="remove__cart-item">
+                                            <a href="cart?action=cart&amp;id=${item.product.getId()}&amp;quantity=0" class="remove__cart-item">
                                                 <svg>
-                                                    <use xlink:href="./images/sprite.svg#icon-trash"></use>
+                                                    <use xlink:href="./interface/images/sprite.svg#icon-trash"></use>
                                                 </svg>
                                             </a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="product__thumbnail">
-                                            <a href="#">
-                                                <img src="./images/products/sumsung/samsung5.jpeg" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="product__name">
-                                            <a href="#">Apple iPhone 11</a>
-                                            <br><br>
-                                            <small>White/6.25</small>
-                                        </td>
-                                        <td class="product__price">
-                                            <div class="price">
-                                                <span class="new__price">$250.99</span>
-                                            </div>
-                                        </td>
-                                        <td class="product__quantity">
-                                            <div class="input-counter">
-                                                <div>
-                                                    <span class="minus-btn">
-                                                        <svg>
-                                                            <use xlink:href="./images/sprite.svg#icon-minus"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <input type="text" min="1" value="1" max="10" class="counter-btn">
-                                                    <span class="plus-btn">
-                                                        <svg>
-                                                            <use xlink:href="./images/sprite.svg#icon-plus"></use>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="product__subtotal">
-                                            <div class="price">
-                                                <span class="new__price">$250.99</span>
-                                            </div>
-                                            <a href="#" class="remove__cart-item">
-                                                <svg>
-                                                    <use xlink:href="./images/sprite.svg#icon-trash"></use>
-                                                </svg>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product__thumbnail">
-                                            <a href="#">
-                                                <img src="./images/products/sumsung/samsung2.jpeg" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="product__name">
-                                            <a href="#">Apple iPhone 11</a>
-                                            <br><br>
-                                            <small>White/6.25</small>
-                                        </td>
-                                        <td class="product__price">
-                                            <div class="price">
-                                                <span class="new__price">$250.99</span>
-                                            </div>
-                                        </td>
-                                        <td class="product__quantity">
-                                            <div class="input-counter">
-                                                <div>
-                                                    <span class="minus-btn">
-                                                        <svg>
-                                                            <use xlink:href="./images/sprite.svg#icon-minus"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <input type="text" min="1" value="1" max="10" class="counter-btn">
-                                                    <span class="plus-btn">
-                                                        <svg>
-                                                            <use xlink:href="./images/sprite.svg#icon-plus"></use>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="product__subtotal">
-                                            <div class="price">
-                                                <span class="new__price">$250.99</span>
-                                            </div>
-                                            <a href="#" class="remove__cart-item">
-                                                <svg>
-                                                    <use xlink:href="./images/sprite.svg#icon-trash"></use>
-                                                </svg>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product__thumbnail">
-                                            <a href="#">
-                                                <img src="./images/products/iPhone/iphone4.jpeg" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="product__name">
-                                            <a href="#">Apple iPhone 11</a>
-                                            <br><br>
-                                            <small>White/6.25</small>
-                                        </td>
-                                        <td class="product__price">
-                                            <div class="price">
-                                                <span class="new__price">$250.99</span>
-                                            </div>
-                                        </td>
-                                        <td class="product__quantity">
-                                            <div class="input-counter">
-                                                <div>
-                                                    <span class="minus-btn">
-                                                        <svg>
-                                                            <use xlink:href="./images/sprite.svg#icon-minus"></use>
-                                                        </svg>
-                                                    </span>
-                                                    <input type="text" min="1" value="1" max="10" class="counter-btn">
-                                                    <span class="plus-btn">
-                                                        <svg>
-                                                            <use xlink:href="./images/sprite.svg#icon-plus"></use>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="product__subtotal">
-                                            <div class="price">
-                                                <span class="new__price">$250.99</span>
-                                            </div>
-                                            <a href="#" class="remove__cart-item">
-                                                <svg>
-                                                    <use xlink:href="./images/sprite.svg#icon-trash"></use>
-                                                </svg>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    </c:forEach>
+                   
                                 </tbody>
                             </table>
                         </div>
 
                         <div class="cart-btns">
                             <div class="continue__shopping">
-                                <a href="/">Continue Shopping</a>
+                                <a href="LoadProduct">Continue Shopping</a>
                             </div>
                             <div class="check__shipping">
                                 <input type="checkbox">
@@ -321,16 +200,12 @@
                             <h3>Cart Totals</h3>
                             <ul>
                                 <li>
-                                    Subtotal
-                                    <span class="new__price">$250.99</span>
-                                </li>
-                                <li>
                                     Shipping
                                     <span>$0</span>
                                 </li>
                                 <li>
                                     Total
-                                    <span class="new__price">$250.99</span>
+                                    <span class="new__price">${cart.getTotalCartFormat()}</span>
                                 </li>
                             </ul>
                             <a href="">PROCEED TO CHECKOUT</a>
@@ -347,7 +222,7 @@
                     <div class="facility__box">
                         <div class="facility-img__container">
                             <svg>
-                                <use xlink:href="./images/sprite.svg#icon-airplane"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-airplane"></use>
                             </svg>
                         </div>
                         <p>FREE SHIPPING WORLD WIDE</p>
@@ -356,7 +231,7 @@
                     <div class="facility__box">
                         <div class="facility-img__container">
                             <svg>
-                                <use xlink:href="./images/sprite.svg#icon-credit-card-alt"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-credit-card-alt"></use>
                             </svg>
                         </div>
                         <p>100% MONEY BACK GUARANTEE</p>
@@ -365,7 +240,7 @@
                     <div class="facility__box">
                         <div class="facility-img__container">
                             <svg>
-                                <use xlink:href="./images/sprite.svg#icon-credit-card"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-credit-card"></use>
                             </svg>
                         </div>
                         <p>MANY PAYMENT GATWAYS</p>
@@ -374,7 +249,7 @@
                     <div class="facility__box">
                         <div class="facility-img__container">
                             <svg>
-                                <use xlink:href="./images/sprite.svg#icon-headphones"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-headphones"></use>
                             </svg>
                         </div>
                         <p>24/7 ONLINE SUPPORT</p>
@@ -417,7 +292,7 @@
                     <div>
                         <span>
                             <svg>
-                                <use xlink:href="./images/sprite.svg#icon-location"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-location"></use>
                             </svg>
                         </span>
                         42 Dream House, Dreammy street, 7131 Dreamville, USA
@@ -425,7 +300,7 @@
                     <div>
                         <span>
                             <svg>
-                                <use xlink:href="./images/sprite.svg#icon-envelop"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-envelop"></use>
                             </svg>
                         </span>
                         company@gmail.com
@@ -433,7 +308,7 @@
                     <div>
                         <span>
                             <svg>
-                                <use xlink:href="./images/sprite.svg#icon-phone"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-phone"></use>
                             </svg>
                         </span>
                         456-456-4512
@@ -441,7 +316,7 @@
                     <div>
                         <span>
                             <svg>
-                                <use xlink:href="./images/sprite.svg#icon-paperplane"></use>
+                                <use xlink:href="./interface/images/sprite.svg#icon-paperplane"></use>
                             </svg>
                         </span>
                         Dream City, USA
@@ -466,7 +341,7 @@
 
     <a href="#header" class="goto-top scroll-link">
         <svg>
-            <use xlink:href="./images/sprite.svg#icon-arrow-up"></use>
+            <use xlink:href="./interface/images/sprite.svg#icon-arrow-up"></use>
         </svg>
     </a>
 
@@ -477,9 +352,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Custom JavaScript -->
-    <script src="./js/products.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/slider.js"></script>
+    <script src="./interface/js/products.js"></script>
+    <script src="./interface/js/index.js"></script>
+    <script src="./interface/js/slider.js"></script>
 </body>
 
 </html>

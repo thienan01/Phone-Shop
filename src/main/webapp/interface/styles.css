@@ -2416,6 +2416,11 @@ Cart Area
 #clickToViewDetail{
 	color: black;
 }
+#updatebtn{
+	border: solid 0.5px #ccc; 
+	background-color: white;
+	height: 40px;
+}
 
 /*
 ======================
