@@ -329,6 +329,7 @@
                   <use xlink:href="./interface/images/sprite.svg#icon-star-empty"></use>
                 </svg>
               </div>
+              <label>Thiện An:</label><p>Sản phẩm tốt lắm nha bà con. Tôi cho 10 sao</p>
             </div>
             <div class="content" id="shipping">
               <h3>Returns Policy</h3>
@@ -361,7 +362,7 @@
         </div>
       </section>
 
-      <!-- Related Products -->
+      <%-- <!-- Related Products -->
       <section class="section related__products">
         <div class="title__container">
           <div class="section__title filter-btn active">
@@ -1395,7 +1396,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </div> --%>
     <!-- Facility Section -->
     <section class="facility__section section" id="facility">
       <div class="container">
