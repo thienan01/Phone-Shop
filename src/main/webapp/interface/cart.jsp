@@ -208,7 +208,9 @@
                                     <span class="new__price">${cart.getTotalCartFormat()}</span>
                                 </li>
                             </ul>
-                            <a href="">PROCEED TO CHECKOUT</a>
+                            <div id="paypal-payment-button">
+                        	</div>
+                            <!-- <a href="">PROCEED TO CHECKOUT</a> -->
                         </div>
                     </form>
                 </div>
@@ -355,6 +357,8 @@
     <script src="./interface/js/products.js"></script>
     <script src="./interface/js/index.js"></script>
     <script src="./interface/js/slider.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=ASpgaE-MY5zVBnwU6xyg7vq3swDdVUgI6B1gad9FQXKxbdiW5CeK-Mhmpu1TVWqMVKoNCgUY-WKD8ANi&disable-funding=credit,card"></script>
+    <script src="./interface/jspayment/index.js"></script>
 </body>
 
 </html>

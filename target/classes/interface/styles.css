@@ -2423,7 +2423,10 @@ Cart Area
 }
 #imgDetail{
 	margin: auto;
+	display: block;
+    max-width: 55%;
 }
+
 
 /*
 ======================
