@@ -58,6 +58,9 @@ public class CartControl extends HttpServlet {
 		if(action.equals("goToCart")) {
 			request.getRequestDispatcher("/interface/cart.jsp").forward(request, response);
 		}
+		if(action.equals("VNPay")) {
+			request.getRequestDispatcher("/VNPay/index.jsp").forward(request, response);
+		}
 	}
 
 }

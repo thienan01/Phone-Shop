@@ -210,6 +210,9 @@
                             </ul>
                             <div id="paypal-button-container">
                         	</div>
+                        	<div>
+                        		<a href="cart?action=VNPay">VNPAY</a>
+                        	</div>
                             <!-- <a href="">PROCEED TO CHECKOUT</a> -->
                         </div>
                     </form>
