@@ -2451,3 +2451,29 @@ Cart Area Media Query
     height: 1.5rem;
   }
 }
+.button {
+    display: inline-block !important;
+    font-style: italic !important;
+    font-weight: bold !important;
+    font-family: Verdana !important;
+    width:  500px !important;
+    height: 55px;
+    padding: 15px 25px !important;
+    font-size: 24px !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    outline: none !important;
+    color: rgb(22, 82, 194) !important;
+    background-color: #bec4be !important;
+    border: none !important;
+    border-radius: 15px !important;
+  }
+  
+  .button:hover {background-color: #a7aca7 !important}
+  
+  .button:active {
+    background-color: #e9f1e9 !important;
+    transform: translateY(4px) !important;
+  }
+  }

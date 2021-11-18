@@ -26,7 +26,7 @@
             </div>
             <h3>Refund</h3>
             <div class="table-responsive">
-                <form action="/vnpay_jsp/vnpayrefund" id="frmrefund" method="Get">
+                <form action="vnpayrefund" id="frmrefund" method="Get">
                     <div class="form-group">
                         <label for="order_id">Mã hóa đơn</label>
                         <input class="form-control" id="order_id"
