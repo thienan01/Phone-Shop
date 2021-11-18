@@ -208,7 +208,7 @@
                                     <span class="new__price">${cart.getTotalCartFormat()}</span>
                                 </li>
                             </ul>
-                            <div id="paypal-payment-button">
+                            <div id="paypal-button-container">
                         	</div>
                             <!-- <a href="">PROCEED TO CHECKOUT</a> -->
                         </div>
@@ -357,8 +357,33 @@
     <script src="./interface/js/products.js"></script>
     <script src="./interface/js/index.js"></script>
     <script src="./interface/js/slider.js"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=ASpgaE-MY5zVBnwU6xyg7vq3swDdVUgI6B1gad9FQXKxbdiW5CeK-Mhmpu1TVWqMVKoNCgUY-WKD8ANi&disable-funding=credit,card"></script>
-    <script src="./interface/jspayment/index.js"></script>
+    <script type="text/javascript" src="https://www.paypal.com/sdk/js?client-id=AVNbpleF-rB5-9TunkBQpwod45gN-4QGZTwxa3L5gtMFOX36Dx8mQZ0lBgQRccl9Dt1je3cBxymUu8-9"></script>
+    <script>
+    paypal.Buttons({
+    	createOrder: function(data, actions){
+    		return actions.order.create({
+    			intent: 'CAPTURE',
+    			payer: {
+    				name: {
+    					given_name: "",
+    					surname: ""
+    				}
+    		
+    				
+    			},
+    			purchase_units: [{
+    				amount: {
+    					value: "99.0",
+    					currency_code: "USD"
+    				}
+    			}]
+    			
+    		
+    			
+    		});
+    	}
+    }).render("#paypal-button-container");
+    </script>
 </body>
 
 </html>
