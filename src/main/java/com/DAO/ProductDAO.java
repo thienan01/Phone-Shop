@@ -55,7 +55,6 @@ public class ProductDAO {
 		} catch (Exception e) {
 			
 		}
-		
 		return null;
 	}
 	
@@ -97,14 +96,23 @@ public class ProductDAO {
 		
 		return null;
 	}
+	public List<Account> getAccounts(){
+		try {
+			Session session = factory.openSession();
+			List<Account> accountList = session.createQuery("From Accounts").getResultList();
+			return accountList;
+		} catch (Exception e) {
+		}
+		return null;
+	}
 	
 	
 	public static void main(String[] args) {
 		  ProductDAO productDAO = new ProductDAO();
 		  String aString ="Iphone";
-		  List<Product> product = productDAO.searchProduct(aString);
-		  for (Product product2 : product) {
-			System.out.print(product2.getName()+"\n");
+		  List<Account> product = productDAO.getAccounts();
+		  for (Account product2 : product) {
+			System.out.print(product2.getIsAdmin()+"\n");
 		}
 		 
 

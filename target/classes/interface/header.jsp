@@ -30,7 +30,7 @@
             </div>
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#header" class="nav__link scroll-link">Home</a>
+                   <a href="LoadProduct" class="nav__link">Home</a>
               </li>
               <li class="nav__item">
                 <a href="#category" class="nav__link scroll-link">Category</a>
@@ -41,19 +41,27 @@
               <li class="nav__item">
                 <a href="#contact" class="nav__link scroll-link">Contact</a>
               </li>
+              <c:if test="${sessionScope.acc.getIsAdmin() == 1}">
+              <li class="nav__item">
+                        <a href="./interface/uploadProduct.jsp" class="nav__link">Upload</a>
+              </li>
+              </c:if>
             </ul>
           </div>
 
           <div class="nav__icons">
-            <a href="#" class="icon__item">
+          
+             <form action="home">
+             	<input type ="hidden" name ="action" value="Search">
+            	<div class="search-box">
+        			<img src="./interface/images/searchIcon.png">
+        			<input type="text" class="search" placeholder="Search" name = "textSearch">
+    			</div>
+            </form>
+
+            <a href="home?action=login" class="icon__item" style="margin-left: 10px">
               <svg class="icon__user">
                 <use xlink:href="./interface/images/sprite.svg#icon-user"></use>
-              </svg>
-            </a>
-
-            <a href="#" class="icon__item">
-              <svg class="icon__search">
-                <use xlink:href="./interface/images/sprite.svg#icon-search"></use>
               </svg>
             </a>
 
@@ -64,6 +72,10 @@
               <span id="cart__total">${cart.getCount()}</span>
             </a>
           </div>
+          <c:if test="${sessionScope.acc != null}">
+          	<a href="login?action=logout">(Log out)</a>
+          </c:if>
         </nav>
       </div>
+      
     </div>

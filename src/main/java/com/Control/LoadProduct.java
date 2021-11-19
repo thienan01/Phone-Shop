@@ -27,6 +27,10 @@ public class LoadProduct extends HttpServlet {
 		request.getRequestDispatcher("/interface/home.jsp").forward(request, response);
 		
 	}
-
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doGet(req, resp);
+	}
 
 }

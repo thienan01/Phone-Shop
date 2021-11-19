@@ -26,10 +26,7 @@ public class HomeControl extends HttpServlet {
 			request.setAttribute("product", product);
 			request.getRequestDispatcher("/interface/product.jsp").forward(request, response);
 		}
-		if (action.equals("login")) {
-			request.getRequestDispatcher("/interface/Login/index.html").forward(request, response); 
-		}
-		
+
 		if (action.equals("getProductByCate")) {
 			int idCate = Integer.parseInt(request.getParameter("id"));
 			ProductDAO productDAO = new ProductDAO(); 
@@ -65,6 +62,9 @@ public class HomeControl extends HttpServlet {
 			List<Product> productsList = productDAO.searchProduct(textSearch);
 			request.setAttribute("pList", productsList);
 			request.getRequestDispatcher("/interface/home.jsp").forward(request, response);
+		}
+		if (action.equals("login")) {
+			request.getRequestDispatcher("/interface/Login/login.jsp").forward(request, response);
 		}
 	}
 	

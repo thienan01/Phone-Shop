@@ -12,5 +12,6 @@
         
         <mapping class="com.entity.Product"></mapping>
         <mapping class="com.entity.Category"></mapping>
+        <mapping class="com.entity.Account"></mapping>
     </session-factory>
 </hibernate-configuration>
