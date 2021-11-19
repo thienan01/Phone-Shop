@@ -80,7 +80,7 @@
         			<input type="text" class="search" placeholder="Search" name = "textSearch">
     			</div>
             </form>
-            <a href="#" class="icon__item" style="margin-right: 10px">
+            <a href="#" class="icon__item" style="margin-left: 10px">
               <svg class="icon__user">
                 <use xlink:href="./interface/images/sprite.svg#icon-user"></use>
               </svg>
