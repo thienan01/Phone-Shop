@@ -645,7 +645,7 @@ Latest Products
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 6rem;
+  margin: 0 auto 3rem;
   padding: 2rem 0;
   background-color: var(--primaryColor);
 }
@@ -2476,4 +2476,5 @@ Cart Area Media Query
     background-color: #e9f1e9 !important;
     transform: translateY(4px) !important;
   }
-  }
+  
+  

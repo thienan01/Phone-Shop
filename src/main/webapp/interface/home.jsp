@@ -307,6 +307,17 @@
             </div>
           </div>
         </div>
+        <div>
+        <form action="home">
+        	<input type="hidden" name="action" value="SearchByPrice">
+        	<select name="rangePrice" id="colors" class="select-box">
+                        <option value="5to10">0-10 triệu</option>
+                        <option value="10to20">10-20 triệu</option>
+                        <option value="up30">Trên 20 triệu</option>
+            </select>
+            <input type=image src="./interface/images/refreshprice.png" alt="Submit Me" style="width:20px">
+        </form>
+        </div>
         <div class="category__container" data-aos="fade-up" data-aos-duration="1200">
           <div class="category__center">
          	<c:forEach var = "item"  items="${pList}">

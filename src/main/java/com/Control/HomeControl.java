@@ -26,6 +26,7 @@ public class HomeControl extends HttpServlet {
 			request.setAttribute("product", product);
 			request.getRequestDispatcher("/interface/product.jsp").forward(request, response);
 		}
+		
 		if (action.equals("getProductByCate")) {
 			int idCate = Integer.parseInt(request.getParameter("id"));
 			ProductDAO productDAO = new ProductDAO(); 
@@ -35,10 +36,26 @@ public class HomeControl extends HttpServlet {
 				product.getPrice().toString();
 			}
 			request.setAttribute("pList", productsList);
-			request.getRequestDispatcher("/interface/home.jsp").forward(request, response);
-			
+			request.getRequestDispatcher("/interface/home.jsp").forward(request, response);			
 		}
-
+		
+		if (action.equals("SearchByPrice")) {
+			String range = request.getParameter("rangePrice");
+			ProductDAO productDAO = new ProductDAO(); 
+			if (range.equals("5to10")) {
+				List<Product> productsList = productDAO.getProductByPrice((double)0,(double)10000000);
+				request.setAttribute("pList", productsList);
+			}
+			if (range.equals("10to20")) {
+				List<Product> productsList = productDAO.getProductByPrice((double)10000000,(double)20000000);
+				request.setAttribute("pList", productsList);
+			}
+			if (range.equals("up30")) {
+				List<Product> productsList = productDAO.getProductByPrice((double)20000000,(double)60000000);
+				request.setAttribute("pList", productsList);
+			}
+			request.getRequestDispatcher("/interface/home.jsp").forward(request, response);	
+		}
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
