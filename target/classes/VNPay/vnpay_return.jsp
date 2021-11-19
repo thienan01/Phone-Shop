@@ -28,10 +28,17 @@
         <meta name="author" content="">
         <title>VNPAY RESPONSE</title>
         <!-- Bootstrap core CSS -->
+<<<<<<< HEAD
         <link href="./assets/bootstrap.min.css" rel="stylesheet"/>
         <!-- Custom styles for this template -->
         <link href="./assets/jumbotron-narrow.css" rel="stylesheet">      
         <script src="./assets/jquery-1.11.3.min.js"></script>
+=======
+        <link href="./VNPay/assets/bootstrap.min.css" rel="stylesheet"/>
+        <!-- Custom styles for this template -->
+        <link href="./VNPay/assets/jumbotron-narrow.css" rel="stylesheet">      
+        <script src="./VNPay/assets/jquery-1.11.3.min.js"></script>
+>>>>>>> 6283ea3afda52b6067484f55693ae6621173a450
     </head>
     <body>
         <%
