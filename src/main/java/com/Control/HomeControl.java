@@ -56,6 +56,13 @@ public class HomeControl extends HttpServlet {
 			}
 			request.getRequestDispatcher("/interface/home.jsp").forward(request, response);	
 		}
+		if (action.equals("Search")) {
+			String textSearch = request.getParameter("textSearch");
+			ProductDAO productDAO = new ProductDAO(); 
+			List<Product> productsList = productDAO.searchProduct(textSearch);
+			request.setAttribute("pList", productsList);
+			request.getRequestDispatcher("/interface/home.jsp").forward(request, response);
+		}
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

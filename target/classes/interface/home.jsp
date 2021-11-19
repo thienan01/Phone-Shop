@@ -72,15 +72,17 @@
           </div>
 
           <div class="nav__icons">
-            <a href="#" class="icon__item">
+          
+             <form action="home">
+             	<input type ="hidden" name ="action" value="Search">
+            	<div class="search-box">
+        			<img src="./interface/images/searchIcon.png">
+        			<input type="text" class="search" placeholder="Search" name = "textSearch">
+    			</div>
+            </form>
+            <a href="#" class="icon__item" style="margin-right: 10px">
               <svg class="icon__user">
                 <use xlink:href="./interface/images/sprite.svg#icon-user"></use>
-              </svg>
-            </a>
-
-            <a href="#" class="icon__item">
-              <svg class="icon__search">
-                <use xlink:href="./interface/images/sprite.svg#icon-search"></use>
               </svg>
             </a>
 
@@ -90,6 +92,8 @@
               </svg>
               <span id="cart__total">${cart.getCount()}</span>
             </a>
+            
+
           </div>
         </nav>
       </div>

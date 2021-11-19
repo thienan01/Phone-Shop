@@ -74,15 +74,35 @@ public class ProductDAO {
 		} catch (Exception e) {
 			
 		}
-
+		return null;
+	}
+	public List<Product> searchProduct(String str){
+		try {
+			Session session = factory.openSession();
+			CriteriaBuilder builder = session.getCriteriaBuilder();
+			CriteriaQuery<Product>  query = builder.createQuery(Product.class);
+			Root<Product> root =  query.from(Product.class);
+			query.select(root);
+			if (!str.isEmpty()) {
+				String p = String.format("%%%s%%", str);
+				
+				Predicate p1 = builder.like(root.get("name").as(String.class), p);
+				Predicate p2 = builder.like(root.get("description").as(String.class), p);
+				query = query.where(builder.or(p1,p2));
+			}
+			List<Product> productList = session.createQuery(query).getResultList();
+			return productList;
+		} catch (Exception e) {
+		}
+		
 		return null;
 	}
 	
+	
 	public static void main(String[] args) {
 		  ProductDAO productDAO = new ProductDAO();
-		  Double a = (double)0;
-		  Double b = (double)10000000;
-		  List<Product> product = productDAO.getProductByPrice((double)0,(double)10000000);
+		  String aString ="Iphone";
+		  List<Product> product = productDAO.searchProduct(aString);
 		  for (Product product2 : product) {
 			System.out.print(product2.getName()+"\n");
 		}
