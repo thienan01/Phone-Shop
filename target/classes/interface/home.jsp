@@ -80,7 +80,8 @@
         			<input type="text" class="search" placeholder="Search" name = "textSearch">
     			</div>
             </form>
-            <a href="#" class="icon__item" style="margin-right: 10px">
+
+            <a href="home?action=login" class="icon__item" style="margin-left: 10px">
               <svg class="icon__user">
                 <use xlink:href="./interface/images/sprite.svg#icon-user"></use>
               </svg>
@@ -319,7 +320,7 @@
                         <option value="10to20">10-20 triệu</option>
                         <option value="up30">Trên 20 triệu</option>
             </select>
-            <input type=image src="./interface/images/refreshprice.png" alt="Submit Me" style="width:20px">
+            <input type=image id="xoay" src="./interface/images/refreshprice.png" alt="Submit Me" style="width:20px">
         </form>
         </div>
         <div class="category__container" data-aos="fade-up" data-aos-duration="1200">

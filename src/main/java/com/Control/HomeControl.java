@@ -26,6 +26,9 @@ public class HomeControl extends HttpServlet {
 			request.setAttribute("product", product);
 			request.getRequestDispatcher("/interface/product.jsp").forward(request, response);
 		}
+		if (action.equals("login")) {
+			request.getRequestDispatcher("/interface/Login/index.html").forward(request, response); 
+		}
 		
 		if (action.equals("getProductByCate")) {
 			int idCate = Integer.parseInt(request.getParameter("id"));
