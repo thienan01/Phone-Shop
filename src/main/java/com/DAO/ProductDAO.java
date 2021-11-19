@@ -9,6 +9,7 @@ import com.entity.*;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.Set;
 
 public class ProductDAO {
 	
@@ -39,15 +40,26 @@ public class ProductDAO {
 		}
 		return null;
 	}
+	public Set<Product> getProductByCategory(int id){
+		try {
+			Session session = factory.openSession();
+			Category c = session.get(Category.class,id);
+			return c.getProducts();
+		} catch (Exception e) {
+			
+		}
+		
+		return null;
+	}
 	
 	public static void main(String[] args) {
-		
-		
 		  ProductDAO productDAO = new ProductDAO();
 		  
 		  String aString = "4";
-		  Product product =productDAO.getProductID(Integer.parseInt(aString));
-		  System.out.print(product.getName());
+		  Set<Product> product =productDAO.getProductByCategory(2);
+		  for (Product product2 : product) {
+			System.out.print(product2.getBrand());
+		}
 		 
 
 		

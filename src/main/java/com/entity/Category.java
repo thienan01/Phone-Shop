@@ -1,9 +1,11 @@
 package com.entity;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,14 +20,23 @@ public class Category {
 	@Column(name = "cBrand")
 	private String cBrand;
 	
-	@OneToMany
-	private List<Product> products;
+	@OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+	private Set<Product> products;
+	/*
+	 * @OneToMany private List<Product> products;
+	 */
 	
-	public List<Product> getProducts() {
+	/*
+	 * public List<Product> getProducts() { return products; }
+	 * 
+	 * public void setProducts(List<Product> products) { this.products = products; }
+	 */
+
+	public Set<Product> getProducts() {
 		return products;
 	}
 
-	public void setProducts(List<Product> products) {
+	public void setProducts(Set<Product> products) {
 		this.products = products;
 	}
 

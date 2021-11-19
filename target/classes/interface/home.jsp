@@ -274,28 +274,35 @@
           <div class="title__container tabs">
             <div class="section__titles category__titles ">
               <div class="section__title filter-btn active" data-id="All Products">
-                <span class="dot"></span>
-                <h1 class="primary__title">All Products</h1>
+                 <span class="dot"></span>
+                <a href="LoadProduct" class="primary__title">All Products</a>            
               </div>
             </div>
             <div class="section__titles">
               <div class="section__title filter-btn" data-id="Trending Products">
                 <span class="dot"></span>
-                <h1 class="primary__title">Trending Products</h1>
+                <h1 class="primary__title"><a href="home?action=getProductByCate&amp;id=2" class="primary__title" style="color:555">Iphone</a></h1>            
               </div>
             </div>
 
             <div class="section__titles">
               <div class="section__title filter-btn" data-id="Special Products">
                 <span class="dot"></span>
-                <h1 class="primary__title">Special Products</h1>
+                <a href="home?action=getProductByCate&amp;id=1" class="primary__title" style="color:555;">Samsung</a>
               </div>
             </div>
 
             <div class="section__titles">
               <div class="section__title filter-btn" data-id="Featured Products">
                 <span class="dot"></span>
-                <h1 class="primary__title">Featured Products</h1>
+                <a href="home?action=getProductByCate&amp;id=4" class="primary__title" style="color:555;">Oppo</a>
+              </div>
+            </div>
+            
+            <div class="section__titles">
+              <div class="section__title filter-btn" data-id="Featured Products">
+                <span class="dot"></span>
+                <a href="home?action=getProductByCate&amp;id=3" class="primary__title" style="color:555;">Xiaomi</a>
               </div>
             </div>
           </div>
