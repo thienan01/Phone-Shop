@@ -132,6 +132,9 @@
                         	<div > 
                         		<a href="cart?action=pay" class="button">Vn-Pay</a>
                         	</div>
+                        	<div > 
+                        		<a href="cart?action=update" class="button">Vn-Pay</a>
+                        	</div>
                             <!-- <a href="">PROCEED TO CHECKOUT</a> -->
                         </div>
                     </form>
