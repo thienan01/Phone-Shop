@@ -1,6 +1,7 @@
 package com.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,4 +58,7 @@ public class Cart implements Serializable {
         currency.setMinimumFractionDigits(0);
         return currency.format(this.totalCart());
     }
+	public BigDecimal getTotalCartBigDecimal() {
+		return new BigDecimal(this.totalCart());
+	}
 }
