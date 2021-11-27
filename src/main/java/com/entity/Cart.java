@@ -61,4 +61,7 @@ public class Cart implements Serializable {
 	public BigDecimal getTotalCartBigDecimal() {
 		return new BigDecimal(this.totalCart());
 	}
+	public String getPriceUSD() {
+		return 	String.format(String.format("%,.1f", (this.totalCart()/23000)));
+	}
 }
