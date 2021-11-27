@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class Cart implements Serializable {
@@ -62,6 +63,7 @@ public class Cart implements Serializable {
 		return new BigDecimal(this.totalCart());
 	}
 	public String getPriceUSD() {
-		return 	String.format(String.format("%,.1f", (this.totalCart()/23000)));
+		return 	String.format(String.format(
+                Locale.FRANCE, "%,.2f", (this.totalCart()/23000)));
 	}
 }
