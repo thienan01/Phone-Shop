@@ -123,14 +123,14 @@
                                     <span>$0</span>
                                 </li>
                                 <li>
-                                    Total
-                                    <span class="new__price">${cart.getTotalCartBigDecimal()}</span>
+                                    Total 
+                                    <span class="new__price">${cart.getTotalCartFormat()}</span>
                                 </li>
                             </ul>
                             <div id="paypal-button-container">
                         	</div>
                         	<div > 
-                        		<a href="cart?action=pay" class="button">Vn-Pay</a>
+                        		<a href="cart?action=pay&amp;amount=${cart.getTotalCartBigDecimal()}" class="button">Vn-Pay</a>
                         	</div>
                             <!-- <a href="">PROCEED TO CHECKOUT</a> -->
                         </div>

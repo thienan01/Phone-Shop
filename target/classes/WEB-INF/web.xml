@@ -54,18 +54,6 @@
     	<servlet-class>com.Control.LoginControl</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ajaxServlet</servlet-name>
-        <url-pattern>/vnpayajax/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>vnpayQuery</servlet-name>
-        <url-pattern>/vnpayquery/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>vnpayRefund</servlet-name>
-        <url-pattern>/vnpayrefund/*</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
     	<servlet-name>LoginControl</servlet-name>
     	<url-pattern>/login</url-pattern>
     </servlet-mapping>
