@@ -75,7 +75,6 @@ public class ajaxServlet extends HttpServlet {
         String vnp_ExpireDate = formatter.format(cld.getTime());
         //Add Params of 2.0.1 Version
         vnp_Params.put("vnp_ExpireDate", vnp_ExpireDate);
-        
         //Build data to hash and querystring
         List fieldNames = new ArrayList(vnp_Params.keySet());
         Collections.sort(fieldNames);
@@ -110,11 +109,6 @@ public class ajaxServlet extends HttpServlet {
         job.addProperty("data", paymentUrl);
         Gson gson = new Gson();
         resp.getWriter().write(gson.toJson(job));
-    }
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	// TODO Auto-generated method stub
-    	doPost(req, resp);
     }
 
 }

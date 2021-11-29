@@ -34,18 +34,13 @@
 		<servlet-name>CartControl</servlet-name>
 		<url-pattern>/cart</url-pattern>
 	</servlet-mapping>
-	
+	 <servlet-mapping>
+        <servlet-name>ajaxServlet</servlet-name>
+        <url-pattern>/vnpayajax/*</url-pattern>
+    </servlet-mapping>
 	<servlet>
         <servlet-name>ajaxServlet</servlet-name>
         <servlet-class>com.vnpay.common.ajaxServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>vnpayQuery</servlet-name>
-        <servlet-class>com.vnpay.common.vnpayQuery</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>vnpayRefund</servlet-name>
-        <servlet-class>com.vnpay.common.vnpayRefund</servlet-class>
     </servlet>
     <servlet>
     	<servlet-name>LoginControl</servlet-name>
