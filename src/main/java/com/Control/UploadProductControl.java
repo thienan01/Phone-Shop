@@ -24,6 +24,7 @@ public class UploadProductControl extends HttpServlet {
 		product.setImage(request.getParameter("image"));
 		ProductDAO productDAO = new ProductDAO();
 		productDAO.insertProduct(product, cateID);
+		request.getRequestDispatcher("LoadProduct").forward(request, response);;
 	}
 
 }

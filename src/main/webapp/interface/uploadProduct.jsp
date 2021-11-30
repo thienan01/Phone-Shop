@@ -71,37 +71,37 @@
 
 				<div class="wrap-input100 validate-input" data-validate = "Product's brand name is required">
 					<span class="label-input100">Brand</span>
-					<input class="input100" type="text" name="brand" placeholder="Enter the product's brand name">
+					<input class="input100" type="text" name="brand" placeholder="Enter the product's brand name" required>
 					<span class="focus-input100"></span>
 				</div>
 				
 				<div class="wrap-input100 validate-input" data-validate = "Name is required">
 					<span class="label-input100">Name</span>
-					<input class="input100" type="text" name="name" placeholder="Enter product's name">
+					<input class="input100" type="text" name="name" placeholder="Enter product's name" required>
 					<span class="focus-input100"></span>
 				</div>
 				
 				<div class="wrap-input100 validate-input" data-validate = "Price is required">
 					<span class="label-input100">Price</span>
-					<input class="input100" type="text" name="price" placeholder="Enter product's price">
+					<input class="input100" type="text" name="price" placeholder="Enter product's price" required>
 					<span class="focus-input100"></span>
 				</div>
 				
 				<div class="wrap-input100 validate-input" data-validate = "Color is required">
 					<span class="label-input100">Color</span>
-					<input class="input100" type="text" name="color" placeholder="Enter product's color">
+					<input class="input100" type="text" name="color" placeholder="Enter product's color" required>
 					<span class="focus-input100"></span>
 				</div>
 				
 				<div class="wrap-input100 validate-input" data-validate = "Status is required">
 					<span class="label-input100">Status</span>
-					<input class="input100" type="text" name="status" placeholder="Enter product's status">
+					<input class="input100" type="text" name="status" placeholder="Enter product's status" required>
 					<span class="focus-input100"></span>
 				</div>
 				
 				<div class="wrap-input100 validate-input" data-validate = "Detail is required">
 					<span class="label-input100">Detail</span>
-					<textarea class="input100" name="detail" placeholder="Enter product's detail"></textarea>
+					<textarea class="input100" name="detail" placeholder="Enter product's detail"></textarea >
 					<span class="focus-input100"></span>
 				</div>
 				

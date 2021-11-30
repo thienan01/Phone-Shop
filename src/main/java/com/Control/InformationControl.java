@@ -15,6 +15,8 @@ public class InformationControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, 
                           HttpServletResponse response) 
                           throws ServletException, IOException {
+    	response.setContentType("text/html;charset=UTF-8");
+    	request.setCharacterEncoding("utf-8");
 		String action = request.getParameter("action");
 		if (action.equals("confirm")) {
 			
@@ -26,6 +28,7 @@ public class InformationControl extends HttpServlet {
 			String message = request.getParameter("message");
 			Information information = new Information(name, email, phone, province, address, message);
 			request.setAttribute("information", information);
+			System.out.print(information.getname());
 			request.getRequestDispatcher("/interface/confirm.jsp").forward(request,response);
 		}
 	}
