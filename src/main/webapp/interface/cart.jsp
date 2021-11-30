@@ -123,8 +123,12 @@
                                     <span>$0</span>
                                 </li>
                                 <li>
-                                    Total 
-                                    <span class="new__price">${cart.getTotalCartFormat()}</span>
+                                    Total VND
+                                    <span class="new__price">${cart.getTotalCartFormat()} VND</span>
+                                </li>
+                                 <li>
+                                    Total USD
+                                    <span class="new__price">${cart.getPriceUSD()} USD</span>
                                 </li>
                             </ul>
                             <div id="paypal-button-container">
@@ -296,7 +300,7 @@
     			},
     			purchase_units: [{
     				amount: {
-    					value: "99.0",
+    					value: "${cart.getPriceUSD()}",
     					currency_code: "USD"
     				}
     			}]
