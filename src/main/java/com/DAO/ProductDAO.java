@@ -105,6 +105,14 @@ public class ProductDAO {
 		}
 		return null;
 	}
+	public void insertProduct(Product p, int cateID) {
+		Session session = factory.openSession();
+		Transaction transaction = session.beginTransaction();	
+		Category category = session.get(Category.class, cateID);
+		p.setCategory(category);
+		session.save(p);
+		transaction.commit();
+	}
 	
 	
 	public static void main(String[] args) {

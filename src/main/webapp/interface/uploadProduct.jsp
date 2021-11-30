@@ -53,25 +53,24 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" action="upload">
 				<span class="contact100-form-title">
 					Upload Product
 				</span>
-
-				<div class="wrap-input100 validate-input" data-validate="Id is required">
-					<span class="label-input100">Product ID</span>
-					<input class="input100" type="text" name="id" placeholder="Enter the Id">
-					<span class="focus-input100"></span>
-				</div>
 				
 				<div class="wrap-input100 validate-input" data-validate="IdCategory is required">
-					<span class="label-input100">IdCategory</span>
-					<input class="input100" type="text" name="idCategory" placeholder="Enter the IdCategory">
+					<span class="label-input100">Category:</span><br>
+					<select name="cateID" id="colors" class="select-box">
+                        <option value="1">1. Samsung</option>
+                        <option value="2">2. Iphone</option>
+                        <option value="3">3. Xiaomi</option>
+                        <option value="4">4. Oppo</option>
+            		</select>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Product's brand name is required">
-					<span class="label-input100">Product's brand name</span>
+					<span class="label-input100">Brand</span>
 					<input class="input100" type="text" name="brand" placeholder="Enter the product's brand name">
 					<span class="focus-input100"></span>
 				</div>
@@ -102,16 +101,20 @@
 				
 				<div class="wrap-input100 validate-input" data-validate = "Detail is required">
 					<span class="label-input100">Detail</span>
-					<textarea class="input100" name="description" placeholder="Enter product's detail"></textarea>
+					<textarea class="input100" name="detail" placeholder="Enter product's detail"></textarea>
 					<span class="focus-input100"></span>
 				</div>
 				
 				<div class="wrap-input100 validate-input" data-validate = "Description is required">
 					<span class="label-input100">Description</span>
-					<textarea class="input100" name="detail" placeholder="Enter product's description"></textarea>
+					<textarea class="input100" name="description" placeholder="Enter product's description"></textarea>
 					<span class="focus-input100"></span>
 				</div>
-				
+				<div class="wrap-input100 validate-input" data-validate = "Color is required">
+					<span class="label-input100">Image</span>
+					<input class="input100" type="text" name="image" placeholder="Enter product's image">
+					<span class="focus-input100"></span>
+				</div>
 
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">

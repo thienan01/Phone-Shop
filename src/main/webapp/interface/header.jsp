@@ -43,7 +43,7 @@
               </li>
               <c:if test="${sessionScope.acc.getIsAdmin() == 1}">
               <li class="nav__item">
-                        <a href="./interface/uploadProduct.jsp" class="nav__link">Upload</a>
+                        <a href="home?action=upload" class="nav__link">Upload</a>
               </li>
               </c:if>
             </ul>
