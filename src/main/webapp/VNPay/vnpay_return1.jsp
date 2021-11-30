@@ -1,6 +1,5 @@
 <%@page import="com.vnpay.common.Config"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%@ page isELIgnored="false"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%-- 
     Document   : vnpay_return
@@ -75,7 +74,7 @@
                 </div>    
                 <div class="form-group">
                     <label >Số tiền:</label>
-                    <label>${amount}</label>
+                    <label><%=request.getParameter("vnp_Amount")%></label>
                 </div>  
                 <div class="form-group">
                     <label >Nội dung thanh toán:</label>
@@ -98,20 +97,7 @@
                     <label><%=request.getParameter("vnp_PayDate")%></label>
                 </div> 
                 <div class="form-group">
-                    <label >Kết quả:</label>
-                    <label>
-                        <%
-                            if (signValue.equals(vnp_SecureHash)) {
-                                if ("00".equals(request.getParameter("vnp_ResponseCode"))) {
-                                    out.print("GD Thanh cong");
-                                } else {
-                                    out.print("GD Khong thanh cong");
-                                }
-
-                            } else {
-                                out.print("Chu ky khong hop le");
-                            }
-                        %></label>
+                    <label >Kết quả: Khong thanh cong</label>
                 </div> 
             </div>
             <p>

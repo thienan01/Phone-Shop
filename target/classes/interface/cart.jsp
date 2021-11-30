@@ -129,8 +129,9 @@
                             </ul>
                             <div id="paypal-button-container">
                         	</div>
+                        
                         	<div > 
-                        		<a href="cart?action=pay&amp;amount=${cart.getTotalCartBigDecimal()}" class="button">Vn-Pay</a>
+                        		<a href="cart?action=test" class="button">VN-PAY</a>
                         	</div>
                             <!-- <a href="">PROCEED TO CHECKOUT</a> -->
                         </div>

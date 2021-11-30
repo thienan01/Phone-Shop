@@ -64,6 +64,8 @@ public class CartControl extends HttpServlet {
 			session.setAttribute("amount", amount);
 			request.getRequestDispatcher("/VNPay/index.jsp").forward(request, response);
 		}
+		if(action.equals("test")) {
+			request.getRequestDispatcher("/interface/information.jsp").forward(request, response);}
 	}
 
 }

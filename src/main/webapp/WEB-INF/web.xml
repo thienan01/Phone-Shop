@@ -22,6 +22,16 @@
 		<description></description>
 		<servlet-class>com.Control.CartControl</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>InformationControl</servlet-name>
+		<display-name>InformationControl</display-name>
+		<description></description>
+		<servlet-class>com.Control.InformationControl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InformationControl</servlet-name>
+		<url-pattern>/information</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>HomeControl</servlet-name>
 		<url-pattern>/home</url-pattern>
