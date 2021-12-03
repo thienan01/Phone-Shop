@@ -17,7 +17,7 @@ public class LoginControl extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String  action = request.getParameter("action");
-		if (action.equals("login")) {
+		if (action.equals("login")) {		
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
 			ProductDAO productDAO = new ProductDAO();
@@ -26,9 +26,7 @@ public class LoginControl extends HttpServlet {
 			Account acc = new Account(); 
 			for (Account account : accounts) {
 				if (account.getUserName().equals(username) && account.getPassWord().equals(password)) {
-					acc.setUserName(username);
-					acc.setPassWord(password);
-					acc.setIsAdmin(account.getIsAdmin());
+					acc = account;
 					exist = true;
 				}
 			}
@@ -36,6 +34,7 @@ public class LoginControl extends HttpServlet {
 				HttpSession session =request.getSession();
 				session.setAttribute("acc", acc);
 				Account a = (Account) session.getAttribute("acc");
+				System.out.print(a.getAddress());
 				System.out.print(a.getIsAdmin());
 				response.sendRedirect("./index.jsp");
 			}

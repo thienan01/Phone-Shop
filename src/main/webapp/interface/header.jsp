@@ -58,13 +58,21 @@
         			<input type="text" class="search" placeholder="Search" name = "textSearch">
     			</div>
             </form>
-
-            <a href="home?action=login" class="icon__item" style="margin-left: 10px">
+			<c:if test="${sessionScope.acc != null}">
+          	<a href="home?action=profile" class="icon__item" style="margin-left: 10px">
               <svg class="icon__user">
                 <use xlink:href="./interface/images/sprite.svg#icon-user"></use>
               </svg>
             </a>
-
+          </c:if>
+          <c:if test="${sessionScope.acc == null}">
+          	<a href="home?action=login" class="icon__item" style="margin-left: 10px">
+              <svg class="icon__user">
+                <use xlink:href="./interface/images/sprite.svg#icon-user"></use>
+              </svg>
+            </a>
+          </c:if>
+            
             <a href="cart?action=goToCart" class="icon__item">
               <svg class="icon__cart">
                 <use xlink:href="./interface/images/sprite.svg#icon-shopping-basket"></use>

@@ -72,9 +72,6 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4>John Doe</h4>
-                      <p class="text-secondary mb-1">Full Stack Developer</p>
-                      <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                       <button class="btn btn-primary">Follow</button>
                       <button class="btn btn-outline-primary">Message</button>
                     </div>
@@ -90,7 +87,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                      ${sessionScope.acc.getFullName() }
                     </div>
                   </div>
                   <hr>
@@ -99,7 +96,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      fip@jukmuh.al
+                      ${sessionScope.acc.getEmail() }
                     </div>
                   </div>
                   <hr>
@@ -108,25 +105,35 @@
                       <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (239) 816-9029
+                      ${sessionScope.acc.getPhone() }
                     </div>
                   </div>
                   <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      (320) 380-4539
-                    </div>
-                  </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Address</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
+                      ${sessionScope.acc.getAddress() }
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Type of Account</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <c:if test="${sessionScope.acc.getIsAdmin() == 1}">
+          					<div class="col-sm-9 text-secondary">
+                      			Admin account
+                    		</div>
+          			  </c:if>
+          			  <c:if test="${sessionScope.acc.getIsAdmin() == 0}">
+          					<div class="col-sm-9 text-secondary">
+                      			User account
+                    		</div>
+          			  </c:if>
                     </div>
                   </div>
                   <hr>
@@ -142,79 +149,6 @@
           </div>
         </div>
 	<div id="dropDownSelect1"></div>
-	<footer id="footer" class="section footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer-top__box">
-          <h3>EXTRAS</h3>
-          <a href="#">Brands</a>
-          <a href="#">Gift Certificates</a>
-          <a href="#">Affiliate</a>
-          <a href="#">Specials</a>
-          <a href="#">Site Map</a>
-        </div>
-        <div class="footer-top__box">
-          <h3>INFORMATION</h3>
-          <a href="#">About Us</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Contact Us</a>
-          <a href="#">Site Map</a>
-        </div>
-        <div class="footer-top__box">
-          <h3>MY ACCOUNT</h3>
-          <a href="#">My Account</a>
-          <a href="#">Order History</a>
-          <a href="#">Wish List</a>
-          <a href="#">Newsletter</a>
-          <a href="#">Returns</a>
-        </div>
-        <div class="footer-top__box">
-          <h3>CONTACT US</h3>
-          <div>
-            <span>
-              <svg>
-                <use xlink:href="./interface/images/sprite.svg#icon-location"></use>
-              </svg>
-            </span>
-            192 Le Van Viet, Quan 9, TP HCM
-          </div>
-          <div>
-            <span>
-              <svg>
-                <use xlink:href="./interface/images/sprite.svg#icon-envelop"></use>
-              </svg>
-            </span>
-            Thienan12359@gmail.com
-          </div>
-          <div>
-            <span>
-              <svg>
-                <use xlink:href="./interface/images/sprite.svg#icon-phone"></use>
-              </svg>
-            </span>
-            0383865402
-          </div>
-          <div>
-            <span>
-              <svg>
-                <use xlink:href="./interface/images/sprite.svg#icon-paperplane"></use>
-              </svg>
-            </span>
-            Ho Chi Minh
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div class="footer-bottom__box">
-
-      </div>
-      <div class="footer-bottom__box">
-
-      </div>
-    </div>
-  </footer>
 
 <!--===============================================================================================-->
 	<script src="./interface/uploadProduct/vendor/jquery/jquery-3.2.1.min.js"></script>
