@@ -55,7 +55,7 @@ public class ConfirmControl extends HttpServlet {
 			boolean test;
 			try {
 				test = EmailUtil.sendEmail(host, port, username, pass, email, "Email Verification",
-						"Registered successfully.Please verify your account using this code: " + order.getCode());
+						"Your order code: " + order.getCode());
 			} catch (MessagingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -87,7 +87,7 @@ public class ConfirmControl extends HttpServlet {
 				if (code.equals(order.getCode())) {
 					request.getRequestDispatcher("/VNPay/index.jsp").forward(request, response);
 				} else {
-					out.println("Incorrect verification code");
+					out.println("Incorrect order code!");
 				}
 			}
 		}
