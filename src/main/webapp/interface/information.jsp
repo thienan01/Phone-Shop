@@ -54,7 +54,7 @@
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="information" method="post">
+			<form class="contact100-form validate-form" action="confirm" method="post">
 				<input type="hidden" name="action" value="confirm">  
 				<span class="contact100-form-title">
 					Customer Information

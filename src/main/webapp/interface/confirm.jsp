@@ -52,7 +52,7 @@
 </head>
 <body>
 	 <jsp:include page="header.jsp"></jsp:include>
-
+	 <form>
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<form class="contact100-form validate-form">
@@ -60,17 +60,17 @@
 					Confirm Your Information
 				</span>
 				<div class="wrap-input100 validate-input">
-					<span class="label-input100">Your Name: ${information.name}</span>
+					<span class="label-input100">Your Name: ${order.getFullName()}</span>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input">
-					<span class="label-input100">Email: ${information.email}</span>
+					<span class="label-input100">Email: ${order.getEmail()}</span>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input">
-					<span class="label-input100">Phone Number: ${information.phone}</span>
+					<span class="label-input100">Phone Number: ${order.getPhone()}</span>
 					<span class="focus-input100"></span>
 				</div>
 				<div>
@@ -80,12 +80,12 @@
 				
 				
 				<div class="wrap-input100 validate-input">
-					<span class="label-input100">Your Address: ${information.address}</span>
+					<span class="label-input100">Your Address: ${order.getAddress()}</span>
 					<span class="focus-input100"></span>
 				</div>
 				
 				<div class="wrap-input100 validate-input">
-					<span class="label-input100">Message: ${information.message}</span>
+					<span class="label-input100">Message: ${order.getMessage()}</span>
 					<span class="focus-input100"></span>
 				</div>
 				<div class="container-contact100-form-btn">
@@ -93,13 +93,14 @@
 						<div class="contact100-form-bgbtn"></div>
 					</div>
 				</div>
+				
 			</form>
 		</div>
 	</div>
 	<section class="section cart__area">
             <div class="container">
                 <div class="responsive__cart-area">
-                    <form class="cart__form">
+                    <form class="cart__form" action="confirm" method = "post">
                         <div class="cart__table table-responsive">
                             <table width="100%" class="table">
                                 <thead>
@@ -162,10 +163,13 @@
                                     <span class="new__price">${cart.getTotalCartFormat()}</span>
                                 </li>
                             </ul>
+                            <jsp:include page="OTP.jsp"></jsp:include>
                             <div id="paypal-button-container">
                         	</div>
-                        	<div > 
-                        		<a href="cart?action=pay&amp;amount=${cart.getTotalCartBigDecimal()}" class="button">VN-PAY</a>
+                        	<div >
+                        		<input type="hidden" name="action" value="verify">
+                        		<input type="submit" value="VN-PAY" class="button"></input>
+      
                         	</div>
                         	<div> 
                         		<a href="http://localhost:8080/Smartphone-Shop-main/VNPay/vnpay_return1.jsp" class="button" style="margin-top: 10px;">Cancel</a>

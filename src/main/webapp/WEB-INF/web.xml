@@ -28,6 +28,28 @@
 		<description></description>
 		<servlet-class>com.Control.InformationControl</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>RegisterController</servlet-name>
+		<display-name>RegisterController</display-name>
+		<description></description>
+		<servlet-class>com.mail_verification.controller.RegisterController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RegisterVerify</servlet-name>
+		<display-name>RegisterVerify</display-name>
+		<description></description>
+		<servlet-class>com.mail_verification.controller.RegisterVerify</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>RegisterController</servlet-name>
+		<url-pattern>/RegisterController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RegisterVerify</servlet-name>
+		<url-pattern>/RegisterVerify</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>InformationControl</servlet-name>
 		<url-pattern>/information</url-pattern>
@@ -44,59 +66,69 @@
 		<servlet-name>CartControl</servlet-name>
 		<url-pattern>/cart</url-pattern>
 	</servlet-mapping>
-	 <servlet-mapping>
-        <servlet-name>ajaxServlet</servlet-name>
-        <url-pattern>/vnpayajax/*</url-pattern>
-    </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ajaxServlet</servlet-name>
+		<url-pattern>/vnpayajax/*</url-pattern>
+	</servlet-mapping>
 	<servlet>
-        <servlet-name>ajaxServlet</servlet-name>
-        <servlet-class>com.vnpay.common.ajaxServlet</servlet-class>
-    </servlet>
-    <servlet>
-    	<servlet-name>LoginControl</servlet-name>
-    	<display-name>LoginControl</display-name>
-    	<description></description>
-    	<servlet-class>com.Control.LoginControl</servlet-class>
-    </servlet>
-    <servlet>
-    	<servlet-name>UploadProductControl</servlet-name>
-    	<display-name>UploadProductControl</display-name>
-    	<description></description>
-    	<servlet-class>com.Control.UploadProductControl</servlet-class>
-    </servlet>
-    <servlet-mapping>
-    	<servlet-name>LoginControl</servlet-name>
-    	<url-pattern>/login</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-    	<servlet-name>UploadProductControl</servlet-name>
-    	<url-pattern>/upload</url-pattern>
-    </servlet-mapping>
-	
+		<servlet-name>ajaxServlet</servlet-name>
+		<servlet-class>com.vnpay.common.ajaxServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginControl</servlet-name>
+		<display-name>LoginControl</display-name>
+		<description></description>
+		<servlet-class>com.Control.LoginControl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UploadProductControl</servlet-name>
+		<display-name>UploadProductControl</display-name>
+		<description></description>
+		<servlet-class>com.Control.UploadProductControl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ConfirmControl</servlet-name>
+		<display-name>ConfirmControl</display-name>
+		<description></description>
+		<servlet-class>com.Control.ConfirmControl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginControl</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadProductControl</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ConfirmControl</servlet-name>
+		<url-pattern>/confirm</url-pattern>
+	</servlet-mapping>
+
 	<session-config>
-    <session-timeout>1200</session-timeout>
-  </session-config>
+		<session-timeout>1200</session-timeout>
+	</session-config>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-	
+
 	<context-param>
-        <param-name>host</param-name>
-        <param-value>smtp.gmail.com</param-value>
-    </context-param>
- 
-    <context-param>
-        <param-name>port</param-name>
-        <param-value>587</param-value>
-    </context-param>
- 
-    <context-param>
-        <param-name>username</param-name>
-        <param-value>thienan12359@gmail.com</param-value>
-    </context-param>
- 
-    <context-param>
-        <param-name>pass</param-name>
-        <param-value>zudxjfufpcljfktx</param-value>
-    </context-param>
+		<param-name>host</param-name>
+		<param-value>smtp.gmail.com</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>port</param-name>
+		<param-value>587</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>username</param-name>
+		<param-value>thienan12359@gmail.com</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>pass</param-name>
+		<param-value>zudxjfufpcljfktx</param-value>
+	</context-param>
 </web-app>
