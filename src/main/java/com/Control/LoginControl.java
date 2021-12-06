@@ -34,8 +34,6 @@ public class LoginControl extends HttpServlet {
 				HttpSession session =request.getSession();
 				session.setAttribute("acc", acc);
 				Account a = (Account) session.getAttribute("acc");
-				System.out.print(a.getAddress());
-				System.out.print(a.getIsAdmin());
 				response.sendRedirect("./index.jsp");
 			}
 			else {

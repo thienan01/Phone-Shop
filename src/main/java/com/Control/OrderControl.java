@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.entity.Cart;
+import com.entity.LineItem;
 import com.entity.Order;
 import com.entity.Product;
 
@@ -59,8 +60,11 @@ public class OrderControl extends HttpServlet {
 			for (Order order : orders) {
 				if (order.getCode().equals(code)) {
 					Cart cart = order.getCart();
-					request.setAttribute("cart", cart);
+					request.setAttribute("cartOrder", cart);
 					request.getRequestDispatcher("/interface/OrderManagement/detailOrder.jsp").forward(request, response);
+					for (LineItem lineItem : cart.getItems()) {
+						System.out.print(lineItem.getProduct().getName());
+					}
 				}
 			}
 		}
