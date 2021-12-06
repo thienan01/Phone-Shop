@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
-
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
             <div class="card p-2 text-center">
-                <h6>Please enter the one time password <br> to verify your account</h6>
-                <div> <span>A code has been sent to</span> <small>*******9897</small> </div>
+                <h6>Please enter the order code to continue</h6>
+                <div> <span>A code has been sent to</span> <small>${order.getEmail()}</small> </div>
                 <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2"> <input class="m-2 text-center form-control rounded" type="text" id="first" maxlength="1" name = "num1" /> <input class="m-2 text-center form-control rounded" type="text" id="second" maxlength="1" name = "num2"/> <input class="m-2 text-center form-control rounded" type="text" id="third" maxlength="1" name = "num3"/> <input class="m-2 text-center form-control rounded" type="text" id="fourth" maxlength="1" name = "num4"/> <input class="m-2 text-center form-control rounded" type="text" id="fifth" maxlength="1" name = "num5"/> <input class="m-2 text-center form-control rounded" type="text" id="sixth" maxlength="1" name = "num6"/> </div>
             </div>
 

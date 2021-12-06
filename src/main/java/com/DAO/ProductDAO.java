@@ -118,10 +118,10 @@ public class ProductDAO {
 	public static void main(String[] args) {
 		  ProductDAO productDAO = new ProductDAO();
 		  String aString ="Iphone";
-		  List<Account> product = productDAO.getAccounts();
-		  for (Account product2 : product) {
-			System.out.print(product2.getIsAdmin()+"\n");
-		}
+			/*
+			 * List<Account> product = productDAO.getAccounts(); for (Account product2 :
+			 * product) { System.out.print(product2.getIsAdmin()+"\n"); }
+			 */
 		 
 
 		

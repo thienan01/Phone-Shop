@@ -43,13 +43,13 @@ public class ConfirmControl extends HttpServlet {
 			String address = request.getParameter("address");
 			String message = request.getParameter("message");
 			HttpSession session = request.getSession();
-			Cart cart = (Cart) session.getAttribute("cart");
+			Cart cartt = (Cart) session.getAttribute("cart");
 			String resultMessage = "";
 
 			String code = EmailUtil.getRandom();
 
 			// create new user using all information
-			Order order = new Order(code, fullName, email, phone, address, message, cart);
+			Order order = new Order(code, fullName, email, phone, address, message, cartt);
 
 			// call the send email method
 			boolean test;
@@ -82,8 +82,6 @@ public class ConfirmControl extends HttpServlet {
 				String num5 = request.getParameter("num5");
 				String num6 = request.getParameter("num6");
 				String code = num1 +num2+num3+num4+num5+num6;
-				System.out.print("code nhap:"+code);
-				System.out.print("co sann:"+ order.getCode());
 				if (code.equals(order.getCode())) {
 					request.getRequestDispatcher("/VNPay/index.jsp").forward(request, response);
 				} else {

@@ -44,7 +44,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach var="item" items="${cart.items}">
+                                    <c:forEach var="item" items="${cartOrder.items}">
 										<tr>
                                         <td class="product__thumbnail">
                                             <a href="#">
