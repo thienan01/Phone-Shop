@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label for="amount">Số tiền</label>
-                        <input class="form-control" data-val="true" data-val-number="The field Amount must be a number." data-val-required="The Amount field is required." id="amount" name="amount" type="number" value="${amount}" readonly/>
+                        <input class="form-control" data-val="true" data-val-number="The field Amount must be a number." data-val-required="The Amount field is required." id="amount" name="amount" type="number" value="${cart.getTotalCartBigDecimal()}" readonly/>
                     </div>
                     <div class="form-group">
                         <label for="OrderDescription">Nội dung thanh toán</label>

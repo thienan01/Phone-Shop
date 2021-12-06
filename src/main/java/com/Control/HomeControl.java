@@ -72,6 +72,9 @@ public class HomeControl extends HttpServlet {
 		if (action.equals("upload")) {
 			request.getRequestDispatcher("/interface/uploadProduct.jsp").forward(request, response);
 		}
+		if (action.equals("viewOrder")) {
+			request.getRequestDispatcher("/interface/OrderManagement/order.jsp").forward(request, response);
+		}
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

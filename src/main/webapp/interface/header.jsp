@@ -46,6 +46,11 @@
                         <a href="home?action=upload" class="nav__link">Upload</a>
               </li>
               </c:if>
+              <c:if test="${sessionScope.acc.getIsAdmin() == 1}">
+              <li class="nav__item">
+                        <a href="home?action=viewOrder" class="nav__link">Order</a>
+              </li>
+              </c:if>
             </ul>
           </div>
 

@@ -39,9 +39,23 @@
         <!-- Custom styles for this template -->
         <link href="./VNPay/assets/jumbotron-narrow.css" rel="stylesheet">      
         <script src="./VNPay/assets/jquery-1.11.3.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="shortcut icon" href="./interface/images/favicon.ico" type="image/x-icon" />
+
+
+  <!-- Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css
+">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom StyleSheet -->
+  <link rel="stylesheet" href="./interface/styles.css" />
 
     </head>
     <body>
+     <jsp:include page="../interface/header.jsp"></jsp:include>
         <%
             //Begin process return from VNPAY
             Map fields = new HashMap();

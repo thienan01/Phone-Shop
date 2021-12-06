@@ -11,6 +11,12 @@
 		<servlet-class>com.Control.HomeControl</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>OrderControl</servlet-name>
+		<display-name>OrderControl</display-name>
+		<description></description>
+		<servlet-class>com.Control.OrderControl</servlet-class>
+	</servlet>
+	<servlet>
 		<servlet-name>LoadProduct</servlet-name>
 		<display-name>LoadProduct</display-name>
 		<description></description>
@@ -62,6 +68,11 @@
 		<servlet-name>LoadProduct</servlet-name>
 		<url-pattern>/LoadProduct</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OrderControl</servlet-name>
+		<url-pattern>/order</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>CartControl</servlet-name>
 		<url-pattern>/cart</url-pattern>
