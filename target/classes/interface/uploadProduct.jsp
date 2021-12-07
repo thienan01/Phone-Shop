@@ -46,7 +46,7 @@
     <!-- Custom StyleSheet -->
     <link rel="stylesheet" href="./interface/styles.css" />
 
-	<title>Phone Shop</title>
+	<title>Upload Product | Phone Shop</title>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>

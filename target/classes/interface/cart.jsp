@@ -24,7 +24,7 @@
     <!-- Custom StyleSheet -->
     <link rel="stylesheet" href="./interface/styles.css" />
 
-    <title>Phone Shop</title>
+    <title>Shoping Cart | Hot Deals, Best Prices</title>
 </head>
 
 <body>

@@ -25,7 +25,7 @@
   <!-- Custom StyleSheet -->
   <link rel="stylesheet" href="./interface/styles.css" />
 
-  <title>Phone Shop</title>
+  <title>Phone Shop | Hot Deals, Best Prices</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
             <li class="glide__slide">
               <div class="hero__center">
                 <div class="hero__left">
-                  <span class="">New Inspiration 2020</span>
+                  <span class="">New Inspiration 2021</span>
                   <h1 class="">PHONES MADE FOR YOU!</h1>
                   <p>Trending from mobile and headphone style collection</p>
                   <a href="#"><button class="hero__btn">SHOP NOW</button></a>
@@ -56,7 +56,7 @@
             <li class="glide__slide">
               <div class="hero__center">
                 <div class="hero__left">
-                  <span>New Inspiration 2020</span>
+                  <span>New Inspiration 2021</span>
                   <h1>PHONES MADE FOR YOU!</h1>
                   <p>Trending from mobile and headphone style collection</p>
                   <a href="#"><button class="hero__btn">SHOP NOW</button></a>
@@ -386,70 +386,65 @@
                 <li class="glide__slide">
                   <div class="new__card">
                     <div class="card__header">
-                      <img src="./interface/images/news1.jpg" alt="">
+                      <img src="https://m-cdn.phonearena.com/images/article/136922-wide-two_940/Android-12-is-officially-rolling-out-to-the-OnePlus-9-and-9-Pro-5G-but-you-may-not-want-to-update-yet.webp?1638828833" alt="">
                     </div>
                     <div class="card__footer">
-                      <h3>Styling White Shirts After A Cool Day</h3>
-                      <span>By Admin</span>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo praesentium, numquam non
-                        provident rem sed minus natus unde vel modi!</p>
-                      <a href="#"><button>Read More</button></a>
+                      <h3>Android 12 is officially rolling out to the OnePlus 9 and 9 Pro 5G</h3>
+                      <span>By  Adrian Diaconescu</span>
+                      <p>The OnePlus 9 and 9 Pro 5G are technically the first non-Google and non-Samsung phones to make... </p>
+                      <a href="https://www.phonearena.com/news/oneplus-9-pro-5g-android-12-update-rollout-bugs-reported_id136922"><button>Read More</button></a>
                     </div>
                   </div>
                 </li>
                 <li class="glide__slide">
                   <div class="new__card">
                     <div class="card__header">
-                      <img src="./interface/images/news2.jpg" alt="">
+                      <img src="https://m-cdn.phonearena.com/images/article/136901-wide-two_940/Apple-may-release-a-cheaper-iPhone-SE-3-2022.webp?1638801182" alt="">
                     </div>
                     <div class="card__footer">
-                      <h3>Styling White Shirts After A Cool Day</h3>
-                      <span>By Admin</span>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo praesentium, numquam non
-                        provident rem sed minus natus unde vel modi!</p>
-                      <a href="#"><button>Read More</button></a>
+                      <h3>Apple may release a cheaper iPhone SE 3 (2022)</h3>
+                      <span>By Daniel Petrov</span>
+                      <p>The base iPhone SE 3 model may be priced even below $399, if supply chain sources are to be believed.</p>
+                      <a href="https://www.phonearena.com/news/apple-may-release-cheaper-iphone-se-3-price_id136901"><button>Read More</button></a>
                     </div>
                   </div>
                 </li>
                 <li class="glide__slide">
                   <div class="new__card">
                     <div class="card__header">
-                      <img src="./interface/images/news3.jpg" alt="">
+                      <img src="https://m-cdn.phonearena.com/images/article/136888-wide-two_940/When-will-the-global-chip-shortage-end-Industry-executives-weigh-in.webp?1638744753" alt="">
                     </div>
                     <div class="card__footer">
-                      <h3>Styling White Shirts After A Cool Day</h3>
-                      <span>By Admin</span>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo praesentium, numquam non
-                        provident rem sed minus natus unde vel modi!</p>
-                      <a href="#"><button>Read More</button></a>
+                      <h3>When will the global chip shortage end?</h3>
+                      <span>By Alan Friedman</span>
+                      <p>Top executives running some of the biggest companies in the chip industry...</p>
+                      <a href="https://www.phonearena.com/news/qualcomm-ceo-optimistic-about-end-of-chip-shortage_id136888"><button>Read More</button></a>
                     </div>
                   </div>
                 </li>
                 <li class="glide__slide">
                   <div class="new__card">
                     <div class="card__header">
-                      <img src="./interface/images/news4.jpg" alt="">
+                      <img src="https://m-cdn.phonearena.com/images/article/136896-wide-two_940/Yet-another-report-foreshadows-delayed-Samsung-Galaxy-S22-series-launch.webp?1638785772" alt="">
                     </div>
                     <div class="card__footer">
-                      <h3>Styling White Shirts After A Cool Day</h3>
-                      <span>By Admin</span>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo praesentium, numquam non
-                        provident rem sed minus natus unde vel modi!</p>
-                      <a href="#"><button>Read More</button></a>
+                      <h3>Yet another report foreshadows 'delayed' Samsung Galaxy S22</h3>
+                      <span>By Adrian Diaconescu</span>
+                      <p>Samsung's Galaxy S22 flagship trio is more and more unlikely to see daylight "on schedule" in early 2022...</p>
+                      <a href="https://www.phonearena.com/news/samsung-galaxy-s22-launch-delay-february-march-2021-report_id136896"><button>Read More</button></a>
                     </div>
                   </div>
                 </li>
                 <li class="glide__slide">
                   <div class="new__card">
                     <div class="card__header">
-                      <img src="./interface/images/news5.jpg" alt="">
+                      <img src="https://m-cdn.phonearena.com/images/article/136909-wide-two_940/Samsung-discounts-every-Galaxy-Buds-model-in-time-for-Christmas.webp?1638796626" alt="">
                     </div>
                     <div class="card__footer">
-                      <h3>Styling White Shirts After A Cool Day</h3>
-                      <span>By Admin</span>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo praesentium, numquam non
-                        provident rem sed minus natus unde vel modi!</p>
-                      <a href="#"><button>Read More</button></a>
+                      <h3>Samsung discounts every Galaxy Buds model in time for Christmas</h3>
+                      <span>By Mariyan Slavov</span>
+                      <p>This deal is part of Samsung’s Last-Minute Gift campaign, so if you’re running late on Christmas presents...</p>
+                      <a href="https://www.phonearena.com/news/samsung-christmas-deals-on-galaxy-buds_id136909"><button>Read More</button></a>
                     </div>
                   </div>
                 </li>
