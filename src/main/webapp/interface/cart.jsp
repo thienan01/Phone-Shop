@@ -303,11 +303,17 @@
     					currency_code: "USD"
     				}
     			}]
-    			
-    		
-    			
     		});
-    	}
+    	},
+    	onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                console.log(details)
+                window.location.replace("http://localhost:8080/Smartphone-Shop-main/success.jsp")
+            })
+        },
+        onCancel: function (data) {
+            window.location.replace("http://localhost:8080/Smartphone-Shop-main/fail.jsp")
+        }
     }).render("#paypal-button-container");
     </script>
 </body>
