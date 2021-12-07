@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Success</title>
+<title>Fail</title>
 </head>
 <body>
 	<div class="container">
@@ -12,7 +12,7 @@
            <div class="col-md-6 mx-auto mt-5">
               <div class="payment">
                  <div class="payment_header">
-                    <div class="check"><i class="fa fa-check" aria-hidden="true"></i></div>
+                    <div class="check"><i class="fa fa-times" aria-hidden="true"></i></div>
                  </div>
                  <div class="content">
                     <h1>Payment Fail !</h1>
