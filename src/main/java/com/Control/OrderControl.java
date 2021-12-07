@@ -33,14 +33,14 @@ public class OrderControl extends HttpServlet {
 				orderList.add(ordered);
 				session.setAttribute("orderList", orderList);
 				session.removeAttribute("order");
-				request.getRequestDispatcher("/VNPay/vnpay_return.jsp").forward(request, response);
+				request.getRequestDispatcher("/VNPay/success.jsp").forward(request, response);
 
 			} else {
 				orderList.add(ordered);
 				session.setAttribute("orderList", orderList);
 				session.setMaxInactiveInterval(60*60*24);
 				session.removeAttribute("order");
-				request.getRequestDispatcher("/VNPay/vnpay_return.jsp").forward(request, response);
+				request.getRequestDispatcher("/VNPay/success.jsp").forward(request, response);
 
 			}
 		}
