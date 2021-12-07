@@ -91,7 +91,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
   font-weight: normal;
-  line-height: 1.5;
   color: #212529;
   background-color: #fff;
 }
@@ -1656,7 +1655,7 @@ select.form-control:focus::-ms-value {
 .input-group-sm > .input-group-btn > .btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 0;
   border-radius: 0.2rem;
 }
 
@@ -1671,7 +1670,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 .input-group-lg > .input-group-btn > .btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
-  line-height: 1.5;
+  line-height: 0;
   border-radius: 0.3rem;
 }
 
@@ -2479,14 +2478,14 @@ fieldset[disabled] a.btn {
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
-  line-height: 1.5;
+  line-height: 0;
   border-radius: 0.3rem;
 }
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 0;
   border-radius: 0.2rem;
 }
 
@@ -3112,7 +3111,7 @@ tbody.collapse.show {
   z-index: 5;
   height: 2.5rem;
   padding: 0.5rem 1rem;
-  line-height: 1.5;
+  line-height: 0;
   color: #495057;
   pointer-events: none;
   -webkit-user-select: none;
@@ -3137,7 +3136,7 @@ tbody.collapse.show {
   display: block;
   height: 2.5rem;
   padding: 0.5rem 1rem;
-  line-height: 1.5;
+  line-height: 0;
   color: #495057;
   background-color: #e9ecef;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -3932,7 +3931,7 @@ tbody.collapse.show {
 .pagination-lg .page-link {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
-  line-height: 1.5;
+  line-height: 0;
 }
 
 .pagination-lg .page-item:first-child .page-link {
@@ -3948,7 +3947,7 @@ tbody.collapse.show {
 .pagination-sm .page-link {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 0;
 }
 
 .pagination-sm .page-item:first-child .page-link {
@@ -4665,7 +4664,7 @@ button.close {
 
 .modal-title {
   margin-bottom: 0;
-  line-height: 1.5;
+  line-height: 0;
 }
 
 .modal-body {
@@ -4726,7 +4725,7 @@ button.close {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 0;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -4840,7 +4839,7 @@ button.close {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 0;
   text-align: left;
   text-align: start;
   text-decoration: none;

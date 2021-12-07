@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="./interface/styles.css" />
     <script src="./interface/selectprovince.js"></script>
 
-	<title>Confirm</title>
+	<title>Confirm infomation</title>
 </head>
 <body>
 	 <jsp:include page="header.jsp"></jsp:include>

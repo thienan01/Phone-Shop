@@ -47,11 +47,17 @@ public class OrderControl extends HttpServlet {
 		if (action.equals("delete")) {
 			String code = request.getParameter("code");
 			List<Order> orders = (List<Order>) session.getAttribute("orderList");
-			for (Order order : orders) {
+			/*
+			 * for (Order order : orders) { if (order.getCode().equals(code)) {
+			 * orders.remove(order); } }
+			 */
+			for (int i = 0; i < orders.size(); i++) {
+				Order order = orders.get(i);
 				if (order.getCode().equals(code)) {
-					orders.remove(order);
+					orders.remove(i);
 				}
 			}
+			session.setAttribute("orderList", orders);
 			request.getRequestDispatcher("/interface/OrderManagement/order.jsp").forward(request, response);
 		}
 		if (action.equals("detailProduct")) {
