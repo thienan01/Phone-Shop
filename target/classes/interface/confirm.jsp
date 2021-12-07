@@ -168,11 +168,11 @@
                         	</div>
                         	<div >
                         		<input type="hidden" name="action" value="verify">
-                        		<input type="submit" value="VN-PAY" class="button"></input>
+                        		<input style="margin-bottom:10px" type="submit" value="VN-PAY" class="button"></input>
       
                         	</div>
-                        	<div> 
-                        		<a href="http://localhost:8080/Smartphone-Shop-main/VNPay/vnpay_return1.jsp" class="button" style="margin-top: 10px;">Cancel</a>
+                        	<div style="margin-top=10px;"> 
+                        		<a href="cart?action=fail" class="button">Cancel</a>
                         	</div>
                             <!-- <a href="">PROCEED TO CHECKOUT</a> -->
                         </div>
