@@ -74,5 +74,11 @@ public class OrderControl extends HttpServlet {
 				}
 			}
 		}
+		if (action.equals("success")) {
+			request.getRequestDispatcher("/VNPay/success.jsp").forward(request, response);
+		}
+		if (action.equals("fail")) {
+			request.getRequestDispatcher("/VNPay/fail.jsp").forward(request, response);
+		}
 	}
 }
