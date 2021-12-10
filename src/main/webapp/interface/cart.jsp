@@ -308,11 +308,11 @@
     	onApprove: function (data, actions) {
             return actions.order.capture().then(function (details) {
                 console.log(details)
-                window.location.replace("https://phoneshopgath07.herokuapp.com/order?action=success")
+                window.location.replace("https://phoneshopath07.herokuapp.com/order?action=success")
             })
         },
         onCancel: function (data) {
-            window.location.replace("https://phoneshopgath07.herokuapp.com/order?action=fail")
+            window.location.replace("https://phoneshopath07.herokuapp.com/order?action=fail")
         }
     }).render("#paypal-button-container");
     </script>
